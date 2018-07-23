@@ -1,0 +1,62 @@
+.mwm_rrss_contenedor {
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+span.mwm_rrss {
+    cursor: pointer;
+    border-radius: 2px;
+    margin: 0.2rem 0.2rem;
+    padding: 0.5rem 0;
+    transition: 0.4s;
+}
+
+.mwm_rrss_contenedor .mwm_rrss a {
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    font-size:1rem;
+    color: #fff;
+    padding: 0.5rem;
+    
+}
+.mwm_rrss_contenedor .mwm_rrss a:hover {
+box-shadow: none;
+color: #fff;
+}
+
+.mwm_rrss_contenedor .mwm_rrss img {
+    height: 20px;
+    box-shadow: none;
+    vertical-align: middle;
+}
+
+.mwm_rrss i {
+    padding-right: 0.5rem;
+}
+
+.mwm_facebook {
+    background: #3b5998;
+}
+.mwm_facebook:hover{
+    background: #344c80;
+}
+.mwm_twitter {
+    background: #00aced;
+}
+.mwm_twitter:hover {
+    background: #0092cc;
+}
+.mwm_google {
+    background: #DB4130;
+}
+.mwm_google:hover {
+    background: #b33729;
+}
+.mwm_pinterest {
+    background: #C61D25;
+}
+.mwm_pinterest:hover {
+    background: #9d181e;
+}

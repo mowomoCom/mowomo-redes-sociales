@@ -7,7 +7,7 @@ Author: mowomo
 Author URI: https://mowomo.com/sobre-mowomo
 Text Domain: mowomo-redes-sociales
 Domain Path: /lenguages/
-Version: 1.1.1
+Version: 1.2
 License: GPLv2 or later.
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */

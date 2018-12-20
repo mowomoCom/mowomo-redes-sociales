@@ -2,13 +2,14 @@
 Contributors: mowomo, pacomarchante, victorsaenztm, pablomiralles, mercedes-blogalizate, blogalizate
 Tags: buttons, icons, share, social media, social share, social buttons
 Requires at least: 4.6
-Tested up to: 4.9.6
-Stable tag: 4.9.6
+Tested up to: 5.0.2
+Stable tag: 5.0.2
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Light and simple plugin for allowing the readers of your blog to share your entries on their social networks. If you only need to offer the possibility to your readers of sharing your blog entries... Why getting complicated? 
+Light and simple plugin for allowing the readers of your blog to share your entries on their social networks. If you only need to offer the possibility to your readers of sharing your blog entries... Why getting complicated?
+
 
 == About this plugin ==
 
@@ -19,6 +20,7 @@ In this version, the plugin has the possibility to share on Facebook, Twitter, G
 You can choose where the buttons will appear (with the color and the icon of each social network) to share on social networks: above the entry, at the end of the entry or both.
 
 You can add your Twitter account to get mentioned when someone share your entry in this social network.
+
 
 == Installation ==
 
@@ -35,6 +37,9 @@ You can add your Twitter account to get mentioned when someone share your entry 
 
 
 == Changelog ==
+= 1.2 =
+* Add WhatsApp and remove Google+
+
 = 1.1.1 =
 * Bugs fixed.
 

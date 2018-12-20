@@ -8,7 +8,15 @@
 add_action( 'admin_init', 'mwm_rrss_init' );
 function mwm_rrss_init() {
 
-    register_setting( 'mwm_rrss_option', 'mwm_rrss_actives' );
+
+      register_setting( 'mwm_rrss_option', 'mwm_rrss_actives' );
+      register_setting( 'mwm_rrss_option', 'mwm_rrss_posicion' );
+      register_setting( 'mwm_rrss_option', 'mwm_rrss_twitter' );
+          add_option('mwm_rrss_actives', array('twitter',
+                                              'facebook',
+                                              'pinterest',
+                                              'googleplus',
+                                              'linkedin'));
 
 }
 
@@ -74,8 +82,12 @@ function mwm_rrss_page(){
                         <td><input type="checkbox" name="mwm_rrss_actives[]" value="pinterest" <?php if(in_array('pinterest',get_option('mwm_rrss_actives'))){echo "checked";} ?>>Pinterest</td>
                     </tr>
                     <tr>
-                        <th>Google+</th>
-                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="googleplus" <?php if(in_array('googleplus',get_option('mwm_rrss_actives'))){echo "checked";} ?>>Google+</td>
+                        <th>Linkedin</th>
+                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="linkedin" <?php if(in_array('linkedin',get_option('mwm_rrss_actives'))){echo "checked";} ?>>Linekdin</td>
+                    </tr>
+                    <tr>
+                        <th>WhatsApp</th>
+                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="whatsapp" <?php if(in_array('whatsapp',get_option('mwm_rrss_actives'))){echo "checked";} ?>>WhatsApp</td>
                     </tr>
                 </tbody>
             <table>

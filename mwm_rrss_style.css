@@ -19,7 +19,7 @@ span.mwm_rrss {
     font-size:1rem;
     color: #fff;
     padding: 0.5rem;
-    
+
 }
 .mwm_rrss_contenedor .mwm_rrss a:hover {
 box-shadow: none;
@@ -35,7 +35,12 @@ color: #fff;
 .mwm_rrss i {
     padding-right: 0.5rem;
 }
-
+.mwm_whatsapp {
+    background: #009487;
+}
+.mwm_whatsapp:hover {
+    background: #006b62;
+}
 .mwm_facebook {
     background: #3b5998;
 }
@@ -48,15 +53,15 @@ color: #fff;
 .mwm_twitter:hover {
     background: #0092cc;
 }
-.mwm_google {
-    background: #DB4130;
-}
-.mwm_google:hover {
-    background: #b33729;
-}
 .mwm_pinterest {
     background: #C61D25;
 }
 .mwm_pinterest:hover {
     background: #9d181e;
+}
+.mwm_linkedin a {
+    background: #0077B5;
+}
+.mwm_linkedin a:hover {
+    background: #006ba5;
 }

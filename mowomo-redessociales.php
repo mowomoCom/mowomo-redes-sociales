@@ -11,6 +11,12 @@ Version: 1.1.1
 License: GPLv2 or later.
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
+
+// Pa' fuera
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+}
+
 /**
  * mowomo-redessociales
  *
@@ -58,9 +64,11 @@ function contenido_redes_sociales($red_social_activa){
           case 'pinterest':
             return '<span class="mwm_rrss mwm_pinterest"><a onclick="compartirRrss(\'http://pinterest.com/pin/create/button/?url='. get_permalink() .'&media='.get_the_post_thumbnail_url().'&description='.get_the_title().'\',\'_blank\');"><i class="pinterest-p"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/pinterest-p.svg"></i> '. esc_html( __( "Pinterest", "mwm_rrss" ) ) .'</a></span>';
             break;
-          case 'googleplus':
-            return '<span class="mwm_rrss mwm_google"><a onclick="compartirRrss(\'https://plus.google.com/share?url='. get_permalink() .'\',\'_blank\');"><i class="google-plus-g"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/google-plus-g.svg"></i> '. esc_html( __( "Google+", "mwm_rrss" ) ) .'</a></span>';
-            break;
+          case 'whatsapp':
+            return '<span class="mwm_rrss mwm_whatsapp"><a href="whatsapp://send?text='. get_the_title() .' – '.get_permalink().'" data-action="share/whatsapp/share" ><i class="icon-whatsapp"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/whatsapp.svg"></i> '. esc_html( __( "WhatsApp", "mwm_rrss" ) ) .'</a></span>';
+          case 'linkedin':
+              return '<span class="mwm_rrss mwm_linkedin"><a onclick="compartirRrss(\'https://www.linkedin.com/shareArticle?mini=true&url=' . $permalink . '&title=' . $title . '&source=' . get_the_post_thumbnail_url() . '\',\'_blank\');"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/linkedin-logo.svg"><span> '. esc_html( __( "Linkedin", "mwm_rrss" ) ) .'</span></a></span>';
+              break;
           default:
           return "";
             break;

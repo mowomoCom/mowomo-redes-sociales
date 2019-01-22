@@ -12,11 +12,7 @@ function mwm_rrss_init() {
       register_setting( 'mwm_rrss_option', 'mwm_rrss_actives' );
       register_setting( 'mwm_rrss_option', 'mwm_rrss_posicion' );
       register_setting( 'mwm_rrss_option', 'mwm_rrss_twitter' );
-          add_option('mwm_rrss_actives', array('twitter',
-                                              'facebook',
-                                              'pinterest',
-                                              'googleplus',
-                                              'linkedin'));
+
 
 }
 

@@ -5,35 +5,44 @@
 }
 
 span.mwm_rrss {
-    cursor: pointer;
-    border-radius: 2px;
     margin: 0.2rem 0.2rem;
-    padding: 0.5rem 0;
+    border-radius: 2px;
     transition: 0.4s;
 }
 
 .mwm_rrss_contenedor .mwm_rrss a {
+    cursor: pointer;
     text-decoration: none;
     border: none;
     box-shadow: none;
-    font-size:1rem;
     color: #fff;
-    padding: 0.5rem;
+    padding: 8px;
+    display: flex;
+    align-items: center;
 
 }
+
 .mwm_rrss_contenedor .mwm_rrss a:hover {
-box-shadow: none;
-color: #fff;
+    box-shadow: none;
+    color: #fff;
 }
 
 .mwm_rrss_contenedor .mwm_rrss img {
     height: 20px;
+    margin-right: 8px;
     box-shadow: none;
     vertical-align: middle;
+    border: none;
+}
+
+.mwm_rrss span {
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    white-space: nowrap;
 }
 
 .mwm_rrss i {
-    padding-right: 0.5rem;
+    padding-right: 8px;
 }
 .mwm_whatsapp {
     background: #009487;
@@ -59,9 +68,9 @@ color: #fff;
 .mwm_pinterest:hover {
     background: #9d181e;
 }
-.mwm_linkedin a {
+.mwm_linkedin {
     background: #0077B5;
 }
-.mwm_linkedin a:hover {
+.mwm_linkedin:hover {
     background: #006ba5;
 }

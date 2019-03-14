@@ -87,6 +87,11 @@ function mwm_rrss_page(){
                     </tr>
                 </tbody>
             <table>
+            <p>ShortCode para usarlo donde quieras -->  [rrss_buttons <?php if(in_array('twitter',get_option('mwm_rrss_actives'))){echo 'twitter="on" ';}
+                                                                            if(in_array('facebook',get_option('mwm_rrss_actives'))){echo 'facebook="on" ';}
+                                                                            if(in_array('pinterest',get_option('mwm_rrss_actives'))){echo 'pinterest="on" ';}
+                                                                            if(in_array('linkedin',get_option('mwm_rrss_actives'))){echo 'linkdin="on" ';}
+                                                                            if(in_array('whatsapp',get_option('mwm_rrss_actives'))){echo 'whatsapp="on" ';} ?>]</p>
             <p><?php @submit_button(); ?></p>
         </form>
         <?php settings_errors(); ?>
@@ -185,3 +190,42 @@ function mwm_rrss_custom_admin_footer( $footer_text ) {
     return $footer_text;
 }
     add_filter( 'admin_footer_text', 'mwm_rrss_custom_admin_footer' );
+
+
+    // Add Shortcode
+function mwm_rrss_shortcode_buttons( $atts ) {
+
+    	// Attributes
+    	$atts = shortcode_atts(
+    		array(
+    			'twitter' => '',
+    			'facebook' => '',
+          'pinterest' => '',
+          'linkdin' => '',
+    			'whatsapp' => '',
+    		),
+    		$atts,
+    		'rrss_buttons'
+    	);
+      $contenido = '<div class="mwm_rrss_contenedor">';
+        if ($atts['twitter'] == "on"){
+          $contenido .= '<span class="mwm_rrss mwm_twitter"><a onclick="compartirRrss(\'https://twitter.com/intent/tweet?text='. get_the_title() .' '. get_permalink() .' vía @'. get_option('mwm_rrss_twitter') .'\',\'_blank\');"><i class="icon-twitter"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/twitter.svg"></i> '. esc_html( __( "Twitter", "mwm_rrss" ) ) .'</a></span>';
+        }
+        if ($atts['facebook'] == "on"){
+          $contenido .= '<span class="mwm_rrss mwm_facebook"><a onclick="compartirRrss(\'https://www.facebook.com/sharer/sharer.php?u='. get_permalink() .'\',\'_blank\');"><i class="facebook-f"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/facebook-f.svg"></i> '. esc_html( __( "Facebook", "mwm_rrss" ) ) .'</a></span>';
+        }
+        if ($atts['pinterest'] == "on"){
+          $contenido .= '<span class="mwm_rrss mwm_pinterest"><a onclick="compartirRrss(\'http://pinterest.com/pin/create/button/?url='. get_permalink() .'&media='.get_the_post_thumbnail_url().'&description='.get_the_title().'\',\'_blank\');"><i class="pinterest-p"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/pinterest-p.svg"></i> '. esc_html( __( "Pinterest", "mwm_rrss" ) ) .'</a></span>';
+        }
+        if ($atts['linkdin'] == "on"){
+          $contenido .= '<span class="mwm_rrss mwm_linkedin"><a onclick="compartirRrss(\'https://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink() . '&title=' . get_the_title() . '&source=' . get_the_post_thumbnail_url() . '\',\'_blank\');"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/linkedin-logo.svg"><span> '. esc_html( __( "Linkedin", "mwm_rrss" ) ) .'</span></a></span>';
+        }
+        if ($atts['whatsapp'] == "on"){
+          $contenido .= '<span class="mwm_rrss mwm_whatsapp"><a href="whatsapp://send?text='. get_the_title() .' – '.get_permalink().'" data-action="share/whatsapp/share" ><i class="icon-whatsapp"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/whatsapp.svg"></i> '. esc_html( __( "WhatsApp", "mwm_rrss" ) ) .'</a></span>';
+        }
+      $contenido .= '</div>';
+    	// Return custom embed code
+    	return $contenido;
+
+}
+add_shortcode( 'rrss_buttons', 'mwm_rrss_shortcode_buttons' );

@@ -67,7 +67,7 @@ function contenido_redes_sociales($red_social_activa){
           case 'whatsapp':
             return '<span class="mwm_rrss mwm_whatsapp"><a href="whatsapp://send?text='. get_the_title() .' – '.get_permalink().'" data-action="share/whatsapp/share" ><i class="icon-whatsapp"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/whatsapp.svg"></i> '. esc_html( __( "WhatsApp", "mwm_rrss" ) ) .'</a></span>';
           case 'linkedin':
-              return '<span class="mwm_rrss mwm_linkedin"><a onclick="compartirRrss(\'https://www.linkedin.com/shareArticle?mini=true&url=' . $permalink . '&title=' . $title . '&source=' . get_the_post_thumbnail_url() . '\',\'_blank\');"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/linkedin-logo.svg"><span> '. esc_html( __( "Linkedin", "mwm_rrss" ) ) .'</span></a></span>';
+              return '<span class="mwm_rrss mwm_linkedin"><a onclick="compartirRrss(\'https://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink() . '&title=' . get_the_title() . '&source=' . get_the_post_thumbnail_url() . '\',\'_blank\');"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/linkedin-logo.svg"><span> '. esc_html( __( "Linkedin", "mwm_rrss" ) ) .'</span></a></span>';
               break;
           default:
           return "";

@@ -7,7 +7,7 @@ Author: mowomo
 Author URI: https://mowomo.com/sobre-mowomo
 Text Domain: mowomo-redes-sociales
 Domain Path: /lenguages/
-Version: 1.2
+Version: 1.2.1
 License: GPLv2 or later.
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -96,41 +96,6 @@ function mwm_rrss_contenido() {
     return $contenido;
 }
 
-
-
-/**
- * mowomo-redessociales
- *
- * @since      1.0.0
- */
-function mwm_before_after($content) {
-
-    if(is_single()) {
-        $contenido = mwm_rrss_contenido();
-        $posicion = get_option('mwm_rrss_posicion');
-        switch ($posicion){
-            case '':
-            case '0':
-                $fullcontent = $content;
-                break;
-            case '1':
-                $fullcontent = $contenido . $content;
-                break;
-            case '2':
-                $fullcontent = $content . $contenido;
-                break;
-            case '3':
-                $fullcontent = $contenido . $content . $contenido;
-                break;
-        }
-        return $fullcontent;
-    } else {
-        return $content;
-    }
-
-}
-add_filter('the_content', 'mwm_before_after');
-
 /**
  * mowomo-redessociales
  *
@@ -152,3 +117,36 @@ function mwm_metas_redessociales() {
 
 }
 add_action( 'wp_head', 'mwm_metas_redessociales' );
+
+/**
+ * mowomo-redessociales
+ *
+ * @since      1.0.0
+ */
+function mwm_before_after($content) {
+
+  if(is_single()) {
+      $contenido = mwm_rrss_contenido();
+      $posicion = get_option('mwm_rrss_posicion');
+      switch ($posicion){
+          case '':
+          case '0':
+              $fullcontent = $content;
+              break;
+          case '1':
+              $fullcontent = $contenido . $content;
+              break;
+          case '2':
+              $fullcontent = $content . $contenido;
+              break;
+          case '3':
+              $fullcontent = $contenido . $content . $contenido;
+              break;
+      }
+      return $fullcontent;
+  } else {
+      return $content;
+  }
+
+}
+add_filter('the_content', 'mwm_before_after');

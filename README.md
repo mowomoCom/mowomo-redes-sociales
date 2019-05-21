@@ -2,8 +2,8 @@
 Contributors: mowomo, pacomarchante, victorsaenztm, pablomiralles, mercedes-blogalizate, blogalizate
 Tags: buttons, icons, share, social media, social share, social buttons
 Requires at least: 4.6
-Tested up to: 5.0.2
-Stable tag: 5.0.2
+Tested up to: 5.1.1
+Stable tag: 5.1.1
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -37,6 +37,10 @@ You can add your Twitter account to get mentioned when someone share your entry 
 
 
 == Changelog ==
+= 1.2.1 =
+* Added shortcode to add social networks
+* Bugs fixed
+
 = 1.2 =
 * Add WhatsApp and remove Google+
 

@@ -1,5 +1,5 @@
 === mowomo Redes Sociales  ===
-Contributors: mowomo, pacomarchante, victorsaenztm, pablomiralles, mercedes-blogalizate, blogalizate
+Contributors: mowomo, pacomarchante, victorsaenztm, pablomiralles, mercedes-blogalizate, blogalizate, dariobf
 Tags: buttons, icons, share, social media, social share, social buttons
 Requires at least: 4.6
 Tested up to: 5.1.1
@@ -37,6 +37,10 @@ You can add your Twitter account to get mentioned when someone share your entry 
 
 
 == Changelog ==
+= 1.2.2 =
+* Added social icons as font-face for better performance (less http requests)
+* Cleared DOM for better performance
+
 = 1.2.1 =
 * Added shortcode to add social networks
 * Bugs fixed

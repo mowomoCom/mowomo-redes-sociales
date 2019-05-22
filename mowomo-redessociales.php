@@ -7,7 +7,7 @@ Author: mowomo
 Author URI: https://mowomo.com/sobre-mowomo
 Text Domain: mowomo-redes-sociales
 Domain Path: /lenguages/
-Version: 1.2.1
+Version: 1.2.2
 License: GPLv2 or later.
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -56,19 +56,20 @@ function contenido_redes_sociales($red_social_activa){
 
       switch ($red_social_activa) {
           case 'twitter':
-            return '<span class="mwm_rrss mwm_twitter"><a onclick="compartirRrss(\'https://twitter.com/intent/tweet?text='. get_the_title() .' '. get_permalink() .' vía @'. get_option('mwm_rrss_twitter') .'\',\'_blank\');"><i class="icon-twitter"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/twitter.svg"></i> '. esc_html( __( "Twitter", "mwm_rrss" ) ) .'</a></span>';
+            return '<a class="mwm_rrss mwm_twitter" onclick="compartirRrss(\'https://twitter.com/intent/tweet?text='. get_the_title() .' '. get_permalink() .' vía @'. get_option('mwm_rrss_twitter') .'\',\'_blank\');">'. esc_html( __( "Twitter", "mwm_rrss" ) ) .'</a>';
             break;
           case 'facebook':
-            return '<span class="mwm_rrss mwm_facebook"><a onclick="compartirRrss(\'https://www.facebook.com/sharer/sharer.php?u='. get_permalink() .'\',\'_blank\');"><i class="facebook-f"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/facebook-f.svg"></i> '. esc_html( __( "Facebook", "mwm_rrss" ) ) .'</a></span>';
+            return '<a class="mwm_rrss mwm_facebook" onclick="compartirRrss(\'https://www.facebook.com/sharer/sharer.php?u='. get_permalink() .'\',\'_blank\');">'. esc_html( __( "Facebook", "mwm_rrss" ) ) .'</a>';
             break;
           case 'pinterest':
-            return '<span class="mwm_rrss mwm_pinterest"><a onclick="compartirRrss(\'http://pinterest.com/pin/create/button/?url='. get_permalink() .'&media='.get_the_post_thumbnail_url().'&description='.get_the_title().'\',\'_blank\');"><i class="pinterest-p"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/pinterest-p.svg"></i> '. esc_html( __( "Pinterest", "mwm_rrss" ) ) .'</a></span>';
+            return '<a class="mwm_rrss mwm_pinterest" onclick="compartirRrss(\'http://pinterest.com/pin/create/button/?url='. get_permalink() .'&media='.get_the_post_thumbnail_url().'&description='.get_the_title().'\',\'_blank\');">'. esc_html( __( "Pinterest", "mwm_rrss" ) ) .'</a>';
             break;
           case 'whatsapp':
-            return '<span class="mwm_rrss mwm_whatsapp"><a href="whatsapp://send?text='. get_the_title() .' – '.get_permalink().'" data-action="share/whatsapp/share" ><i class="icon-whatsapp"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/whatsapp.svg"></i> '. esc_html( __( "WhatsApp", "mwm_rrss" ) ) .'</a></span>';
+            return '<a class="mwm_rrss mwm_whatsapp" href="whatsapp://send?text='. get_the_title() .' – '.get_permalink().'" data-action="share/whatsapp/share" >'. esc_html( __( "WhatsApp", "mwm_rrss" ) ) .'</a>';
+            break;
           case 'linkedin':
-              return '<span class="mwm_rrss mwm_linkedin"><a onclick="compartirRrss(\'https://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink() . '&title=' . get_the_title() . '&source=' . get_the_post_thumbnail_url() . '\',\'_blank\');"><img src="' . plugin_dir_url( __FILE__ ) .'assets/social-icons/linkedin-logo.svg"><span> '. esc_html( __( "Linkedin", "mwm_rrss" ) ) .'</span></a></span>';
-              break;
+            return '<a class="mwm_rrss mwm_linkedin" onclick="compartirRrss(\'https://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink() . '&title=' . get_the_title() . '&source=' . get_the_post_thumbnail_url() . '\',\'_blank\');">'. esc_html( __( "Linkedin", "mwm_rrss" ) ) .'</a>';
+            break;
           default:
           return "";
             break;

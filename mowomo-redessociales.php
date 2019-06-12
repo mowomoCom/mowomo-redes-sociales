@@ -126,7 +126,7 @@ add_action( 'wp_head', 'mwm_metas_redessociales' );
  */
 function mwm_before_after($content) {
 
-  if(is_single()) {
+  if(is_single() && get_post_type()=='post') {
       $contenido = mwm_rrss_contenido();
       $posicion = get_option('mwm_rrss_posicion');
       switch ($posicion){

@@ -36,6 +36,15 @@ function mwm_rrss_pagina(){
  * @since      1.0.0
  */
 function mwm_rrss_page(){
+    $mwm_rrss_actives = get_option('mwm_rrss_actives');
+    $twitter = $facebook = $linkedin = $pinterest = $whatsapp = false;
+    if(!empty($mwm_rrss_actives)){
+        if(in_array('twitter',$mwm_rrss_actives)){$twitter=true;}
+        if(in_array('facebook',$mwm_rrss_actives)){$facebook=true;}
+        if(in_array('linkedin',$mwm_rrss_actives)){$linkedin=true;}
+        if(in_array('pinterest',$mwm_rrss_actives)){$pinterest=true;}
+        if(in_array('whatsapp',$mwm_rrss_actives)){$whatsapp=true;}
+    }
     ?>
     <div class="wrap">
         <?php screen_icon(); ?>
@@ -67,31 +76,31 @@ function mwm_rrss_page(){
                     </tr>
                     <tr>
                         <th>Twitter</th>
-                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="twitter" <?php if(in_array('twitter',get_option('mwm_rrss_actives'))){echo "checked";} ?>>Twitter</td>
+                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="twitter" <?php if($twitter){echo "checked";} ?>>Twitter</td>
                     </tr>
                     <tr>
                         <th>Facebook</th>
-                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="facebook" <?php if(in_array('facebook',get_option('mwm_rrss_actives'))){echo "checked";} ?>>Facebook</td>
+                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="facebook" <?php if($facebook){echo "checked";} ?>>Facebook</td>
                     </tr>
                     <tr>
                         <th>Pinterest</th>
-                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="pinterest" <?php if(in_array('pinterest',get_option('mwm_rrss_actives'))){echo "checked";} ?>>Pinterest</td>
+                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="pinterest" <?php if($pinterest){echo "checked";} ?>>Pinterest</td>
                     </tr>
                     <tr>
                         <th>Linkedin</th>
-                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="linkedin" <?php if(in_array('linkedin',get_option('mwm_rrss_actives'))){echo "checked";} ?>>Linekdin</td>
+                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="linkedin" <?php if($linkedin){echo "checked";} ?>>Linekdin</td>
                     </tr>
                     <tr>
                         <th>WhatsApp</th>
-                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="whatsapp" <?php if(in_array('whatsapp',get_option('mwm_rrss_actives'))){echo "checked";} ?>>WhatsApp</td>
+                        <td><input type="checkbox" name="mwm_rrss_actives[]" value="whatsapp" <?php if($whatsapp){echo "checked";} ?>>WhatsApp</td>
                     </tr>
                 </tbody>
             <table>
-            <p>ShortCode para usarlo donde quieras -->  [rrss_buttons <?php if(in_array('twitter',get_option('mwm_rrss_actives'))){echo 'twitter="on" ';}
-                                                                            if(in_array('facebook',get_option('mwm_rrss_actives'))){echo 'facebook="on" ';}
-                                                                            if(in_array('pinterest',get_option('mwm_rrss_actives'))){echo 'pinterest="on" ';}
-                                                                            if(in_array('linkedin',get_option('mwm_rrss_actives'))){echo 'linkdin="on" ';}
-                                                                            if(in_array('whatsapp',get_option('mwm_rrss_actives'))){echo 'whatsapp="on" ';} ?>]</p>
+            <p><?php _e('ShortCode for use wherever you want','mowomo-redes-sociales'); ?> -->  [rrss_buttons <?php if($twitter){echo 'twitter="on" ';}
+                                                                            if($facebook){echo 'facebook="on" ';}
+                                                                            if($pinterest){echo 'pinterest="on" ';}
+                                                                            if($linkedin){echo 'linkdin="on" ';}
+                                                                            if($whatsapp){echo 'whatsapp="on" ';} ?>]</p>
             <p><?php @submit_button(); ?></p>
         </form>
         <?php settings_errors(); ?>

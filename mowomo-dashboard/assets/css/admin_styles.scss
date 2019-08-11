@@ -20,15 +20,28 @@
 
                 th {
                     padding: 1rem;
+                    @media (max-width: 768px) {
+                        padding-bottom: 0.5rem;
+                    }
                 }
 
                 td {
 
+                    @media (max-width: 768px) {
+                        padding-left: 1rem;
+                        padding-bottom: 1rem;
+                    }
+                    
+
                     input[type='text'], select {
                         width: 25rem;
+                        border-width: 2px;
+                        border-color: #cccccc;
                         max-width: 100%;
-                        height: 2rem;
+                        height: 2rem !important;
                         padding: .3rem;
+                        vertical-align: middle;
+                        box-shadow: none !important;
                     }
 
                     input[type='checkbox'].mwm-toggle {
@@ -71,6 +84,48 @@
                     label:active:after {
                         width: 2.4rem;
                     }
+
+                    .input-group {
+                        display: table;
+                        border-collapse: collapse;
+
+                        input {
+                            margin-right: 0;
+                            border-right: none;
+                            vertical-align: middle;
+                            @media (max-width: 768px) {
+                                border-right: 2px solid #cccccc;
+                                margin-bottom: 0.5rem;
+                            }
+                        }
+
+                        button {
+                            display: table-cell;
+                            border: 2px solid #00bac3;
+                            padding: .3rem !important;
+                            vertical-align: middle;
+                            height: 2rem !important;
+                            background-color: #f3feff;
+                            color: #00cad5;
+                            outline: none !important;
+                            height: unset;
+                            font-size: 12px;
+                            font-weight: bold;
+                            text-shadow: none;
+                            box-shadow: none;
+                            text-transform: uppercase;
+                            transition: all .2s ease-in-out;
+
+                            &:hover {
+                                background-color: #00cad5;
+                                color: #ffffff;
+                                cursor: pointer;
+                            }
+                            &:active {
+                                background-color: #5ed3da;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -86,11 +141,16 @@
         text-shadow: none;
         box-shadow: none;
         text-transform: uppercase;
-        transition: all .15s ease-in-out;
+        transition: all .2s ease-in-out;
 
         &:hover {
             background-color: #00cad5;
             color: #ffffff;
+        }
+
+        &:active {
+            background-color: #5ed3da;
+            transform: none !important;
         }
     }
 }

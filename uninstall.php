@@ -17,9 +17,9 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
 }
 
 //Eliminar cuenta de Twitter
-delete_option('mwm_rrss_twitter');
+delete_option(MWM_RRSS_SLUG.'-twitter');
 //Eliminar posición de los botones
-delete_option('mwm_rrss_posicion');
+delete_option(MWM_RRSS_SLUG.'-posicion');
 //Eliminar botones que se muestran
 delete_option('mwm_rrss_show_tw');
 delete_option('mwm_rrss_show_fb');

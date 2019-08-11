@@ -11,18 +11,28 @@
  *
  * @since 1.3.0
  */
-if (!defined('ABSPATH') || !defined('MWM_VERSION')) {
+if (!defined('ABSPATH') || !defined('MWM_RRSS_VERSION')) {
     exit; // Exit if accessed directly.
 }
 
 mwm_title('Position of buttons');
 mwm_table();
-
+    mwm_select(
+        MWM_RRSS_SLUG.'-posicion',
+        'Position of buttons',
+        get_option(MWM_RRSS_SLUG.'-posicion'),
+        array(
+            '0' => 'Don\'t show',
+            '1' => 'Before the post',
+            '2' => 'After the post',
+            '3' => 'Before and after the post'
+        ),
+        'Choose where you want to make the social buttons appear'
+    );
     mwm_input_text(
-        'mwm_rrss_twitter',
+        MWM_RRSS_SLUG.'-twitter',
         'Usuario de Twitter',
-        get_option('mwm_rrss_twitter'),
+        get_option(MWM_RRSS_SLUG.'-twitter'),
         'Introducir el usuario sin @. E.j: mowomocom'
     );
-
-mwm_endtable();
+mwm_endtable(); 

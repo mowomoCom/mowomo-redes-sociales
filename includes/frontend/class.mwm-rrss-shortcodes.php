@@ -11,7 +11,7 @@
  *
  * @since 1.3.0
  */
-if (!defined('ABSPATH') || !defined('MWM_VERSION')) {
+if (!defined('ABSPATH') || !defined('MWM_RRSS_VERSION')) {
     exit; // Exit if accessed directly.
 }
 
@@ -62,7 +62,7 @@ if (!class_exists('mwm_rrss_shortcodes')) {
     			    'twitter' => '',
     			    'facebook' => '',
                     'pinterest' => '',
-                    'linkdin' => '',
+                    'linkedin' => '',
                     'whatsapp' => '',
                 ),
                 $atts,
@@ -72,7 +72,7 @@ if (!class_exists('mwm_rrss_shortcodes')) {
             // Load the template part with atts
             ob_start();
             set_query_var( 'mwm_rrss_atts', $atts );
-            mwm_rrss_get_template_part('shortcode', 'basic');
+            mwm_template('frontend/shortcode', 'basic');
             return ob_get_clean();
         }
     }

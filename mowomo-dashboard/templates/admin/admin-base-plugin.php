@@ -11,7 +11,7 @@
  *
  * @since 1.3.0
  */
-if (!defined('ABSPATH') || !defined('MWM_VERSION')) {
+if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
@@ -19,6 +19,7 @@ if (!defined('ABSPATH') || !defined('MWM_VERSION')) {
 $admin_title = $admin_config['title'];
 $page_slug = $admin_config['page_slug'];
 $admin_tabs = $admin_config['tabs'];
+$plugin_slug = $admin_config['plugin_slug'];
 
 // MAKE THE MAGIC!
 
@@ -39,22 +40,19 @@ $admin_tabs = $admin_config['tabs'];
     <!-- Dinamic Admin Form -->
     <form id="mwm-admin-form" mwm-current-tab="<?php echo $active_tab; ?>" mwm-page-slug="<?php echo $page_slug; ?>" action="options.php" method="post">
         <?php
-            settings_fields( 'mwm_rrss_option' );
-            @do_settings_fields( 'mwm-rrss' ,'mwm_rrss_option' );
+            settings_fields( $plugin_slug.'-options' );
+            @do_settings_fields( $plugin_slug ,$plugin_slug.'-options' );
         ?>
-
         <?php foreach ($admin_tabs as $tab_title => $tab_slug) : ?>
             <div id="tab-<?php echo $tab_slug[1]; ?>" class="mwm-tab <?php echo !$first_tab ? 'hidden' : ''; ?>">
                 <?php
-                    print mwm_template($tab_slug[0], $tab_slug[1], $args);
+                    print mwm_template($tab_slug[0], $tab_slug[1]);
                 ?>
             </div>
         <?php endforeach; ?>
 
-
         <p><?php @submit_button(); ?></p>
     </form>
-    
-    <!-- Settings Errors -->
+
     <?php settings_errors(); ?>
 </div>

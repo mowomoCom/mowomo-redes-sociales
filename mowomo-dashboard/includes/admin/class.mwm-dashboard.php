@@ -108,9 +108,6 @@ if (!class_exists('mwm_dashboard')) {
          */
         public function init()
         {
-            // register_setting( 'mwm_rrss_option', 'mwm_rrss_actives' );
-            // register_setting( 'mwm_rrss_option', MWM_RRSS_SLUG.'-posicion' );
-            // register_setting( 'mwm_rrss_option', MWM_RRSS_SLUG.'-twitter' );
         }
 
         /**
@@ -149,18 +146,14 @@ if (!class_exists('mwm_dashboard')) {
         {
             // Configure the administrator page
             $admin_config = array(
-                'title' => __('mowomo Dashboard', MWM_FRA_SLUG),
+                'title' => __('General', MWM_FRA_SLUG),
                 'page_slug' => MWM_FRA_SLUG,
-                'tabs' => array(
-                    __('Configuración general') => array('admin/admin', 'general', array()),
-                ),
             );
-            
 
             set_query_var( 'admin_config', $admin_config );
 
             // Load the base template
-            mwm_dashboard_admin();
+            mwm_dashboard_template('admin/admin', 'general', array());
         }
 
         /**

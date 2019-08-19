@@ -131,6 +131,24 @@
         }
     }
 
+    .mwm-content {
+        display: flex;
+        flex-direction: row;
+
+        .mwm-left-side, .mwm-right-side {
+
+        }
+
+        .mwm-left-side {
+            width: 70%;
+            margin-right: 4rem;
+        }
+
+        .mwm-right-side {
+            width: 30%;
+        }
+    }
+
     .button-primary {
         border: 2px solid #00bac3;
         padding: .2rem .8rem;

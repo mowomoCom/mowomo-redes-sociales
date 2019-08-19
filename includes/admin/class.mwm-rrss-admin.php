@@ -66,7 +66,7 @@ if (!class_exists('mwm_rrss_admin')) {
          */
         public function __construct()
         {
-            // Ading scripts
+            // Adding scripts
             add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
 
             // Initializing plugin information

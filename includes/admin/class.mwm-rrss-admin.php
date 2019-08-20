@@ -118,6 +118,40 @@ if (!class_exists('mwm_rrss_admin')) {
             register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-size');
             register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-alignment');
             register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-orientation');
+
+            $update_message = 'Mensaje de actualización';
+            $update_url = 'https://www.mowomo.com/';
+            $plugin_data = array(
+                MWM_RRSS_SLUG => array(
+                    'name' => __('mowomo Redes Sociales', MWM_RRSS_SLUG),
+                    'update_message' => __($update_message, MWM_RRSS_SLUG), 
+                    'update_url' => $update_url,
+                    'pro' => MWM_RRSS_PRO
+                )
+            );
+            if (!get_option('mwm-plugins')) {
+                update_option('mwm-plugins', $plugin_data);
+            } else {
+                $plugins = get_option('mwm-plugins');
+                $plugins = array_merge($plugins, $plugin_data);
+                update_option('mwm-plugins', $plugins);
+            }
+
+            $plugin_notices = mwm_plugin_notices();
+            $plugin_to_notice = array();
+            
+            if (get_option(MWM_RRSS_SLUG.'-twitter') == "") {
+                $plugin_to_notice = array_merge($plugin_to_notice, array(
+                    MWM_RRSS_SLUG.'-twitter' => array(
+                        'name' => __('Twitter profile', MWM_RRSS_SLUG),
+                        'message' => __('There is no twitter profile configured', MWM_RRSS_SLUG), 
+                        'slug' => MWM_RRSS_SLUG,
+                    )
+                ));
+            }
+
+            update_option('mwm-plugin-notices', array_merge($plugin_notices, $plugin_to_notice));
+            
         }
 
         /**

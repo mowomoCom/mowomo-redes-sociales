@@ -213,3 +213,46 @@ function mwm_rrss_get_post_url()
 
     return apply_filters( 'mwm_rrss_get_post_url', $post_url, $post->ID );
 }
+
+/**
+ * Return pro plugins
+ *
+ * @since      1.0.0
+ *
+ * @return string
+*/
+function mwm_pro_plugins()
+{
+    return get_option('mwm-plugins');
+}
+
+/**
+ * Return no pro plugins
+ *
+ * @since      1.0.0
+ *
+ * @return string
+*/
+function mwm_no_pro_plugins()
+{
+    $plugins = mwm_pro_plugins();
+    $no_pro_plugins = array();
+    foreach ($plugins as $key => $value) {
+        if (!$value['pro']) {
+            $no_pro_plugins = array_merge($no_pro_plugins, array($key => $value));
+        }
+    }
+    return $no_pro_plugins;
+}
+
+/**
+ * Return every notice from the plugins
+ *
+ * @since      1.0.0
+ *
+ * @return string
+*/
+function mwm_plugin_notices()
+{
+    return get_option('mwm-plugin-notices');
+}

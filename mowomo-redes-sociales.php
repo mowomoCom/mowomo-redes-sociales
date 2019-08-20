@@ -36,6 +36,9 @@ if (defined('MWM_RRSS_VERSION')) {
 if (!defined('MWM_RRSS_SLUG')) {
     define('MWM_RRSS_SLUG', 'mowomo-redes-sociales');
 }
+if (!defined('MWM_RRSS_PRO')) {
+    define('MWM_RRSS_PRO', false);
+}
 if (!defined('MWM_RRSS_FILE')) {
     define('MWM_RRSS_FILE', __FILE__);
 }

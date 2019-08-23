@@ -25,9 +25,9 @@ mwm_table();
         'Aspecto',
         get_option(MWM_RRSS_SLUG.'-appearance'),
         array(
-            '0' => 'Metro',
-            '1' => 'Material blanco y negro',
-            '2' => 'Material a color'
+            'metro' => 'Metro',
+            'material' => 'Material blanco y negro',
+            'material-color' => 'Material a color'
         )
     );
     mwm_select(

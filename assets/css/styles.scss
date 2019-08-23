@@ -5,173 +5,85 @@
     font-style: normal;
 }
 
+@import "./variables";
+@import "./mixins";
 
-.mwm_rrss {
-    line-height: 2.5rem;
-    color:#fff !important; /* Force white text, some themes has links colored */
+.mwm_rrss{
+
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0 1rem;
-    margin: .3rem .3rem !important;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-    a.mwm_rrss:first-child() {
+
+    &:first-child() {
         margin-left: 0 !important;
     }
-    a.mwm_rrss:last-child() {
+
+    &:last-child() {
         margin-right: 0 !important;
     }
 
-    .mwm_rrss::before {
-    content:'';
-    display: block;
-    margin-right: .2rem;
-    
-    /* use !important to prevent issues with browser extensions that change fonts */
-	font-family: 'mwm-rrss' !important;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    &::before {
+        display: block;
+        margin-right: .2rem;
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'mwm-rrss' !important;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
 }
 
 .mwm_twitter {
-    background: #00aced;
-}
-.mwm_twitter:hover {
-    background: #0092cc;
-}
-    .mwm_twitter::before {
+
+    &::before {
         content: "\e904";
     }
+}
+
 .mwm_facebook {
-    background: #3b5998;
-}
-.mwm_facebook:hover{
-    background: #344c80;
-}
-    .mwm_facebook::before {
+
+    &::before {
         content: "\e903";
     }
-    .mwm_pinterest {
-        background: #C61D25;
-    }
-    .mwm_pinterest:hover {
-        background: #9d181e;
-    }
-    .mwm_pinterest::before {
+}
+
+
+.mwm_pinterest {
+
+    &::before {
         content: "\e902";
     }
-.mwm_linkedin {
-    background: #0077B5;
 }
-.mwm_linkedin:hover {
-        background: #006ba5;
-    }
-    .mwm_linkedin::before {
+
+.mwm_linkedin {
+
+    &::before {
         content: "\e901";
         margin-top: -.2rem;
     }
-    .mwm_whatsapp {
-    background: #009487;
 }
-.mwm_whatsapp:hover {
-        background: #006b62;
-    }
-    .mwm_whatsapp::before {
+
+.mwm_whatsapp {
+
+    &::before {
         content: "\e900";
     }
-    
-.appearance-material {
-    border: 2px solid #000 !important;
-    border-radius: 100%;
-    padding: 0 !important;
-    height: 3rem;
-    width: 3rem;
-    font-size: 1rem;
-    background-color: #fff;
-    color: #000 !important;
-    box-shadow: none !important;
-    transition: all 0.2s ease-in-out;
-    &::before {
-        margin: 0 !important;
-    }
-    
-    &.mwm_whatsapp {
-        font-size: 1.3rem;
-    }
-    
-    &:hover {
-        color: #fff !important;
-        background-color: #000 !important;
-    }
 }
 
-.appearance-material-color {
-    border: 2px solid !important;
-    border-radius: 100%;
-    padding: 0 !important;
-    height: 3rem;
-    width: 3rem;
-    font-size: 1rem;
-    background-color: #fff;
-    color: #000 !important;
-    box-shadow: none !important;
-    transition: all 0.2s ease-in-out;
-    &::before {
-        margin: 0 !important;
-    }
-    
-    &.mwm_whatsapp {
-        font-size: 1.3rem;
-    }
-    
-    &.mwm_twitter {
-        border-color: #00aced !important;
-        color: #00aced !important;
-    }
-    &.mwm_facebook {
-        border-color: #3b5998 !important;
-        color: #3b5998 !important;
-    }
-    &.mwm_pinterest {
-        border-color: #C61D25 !important;
-        color: #C61D25 !important;
-    }
-    &.mwm_linkedin {
-        border-color: #0077B5 !important;
-        color: #0077B5 !important;
-    }
-    &.mwm_whatsapp {
-        border-color: #009487 !important;
-        color: #009487 !important;
-    }
+/* ASPECTOS */
 
-    &:hover {
-        color: #fff !important;
-        &.mwm_twitter {
-            background-color: #00aced !important;
-        }
-        &.mwm_facebook {
-            background-color: #3b5998 !important;
-        }
-        &.mwm_pinterest {
-            background-color: #C61D25 !important;
-        }
-        &.mwm_linkedin {
-            background-color: #0077B5 !important;
-        }
-        &.mwm_whatsapp {
-            background-color: #009487 !important;
-        }
-    }
-}
+@import "./aspectos/metro";
+
+@import "./aspectos/material";
+
+@import "./aspectos/material-color";
 
 .mwm_rrss_contenedor {
     margin: 1rem 0;
@@ -181,12 +93,12 @@
     a {
         transition: all .2s ease-in-out !important;
     }
-    
+
     // Border type
     &.border-square {
         a {
             border-radius: 0 !important;
- 
+
         }
     }
     &.border-rounded {

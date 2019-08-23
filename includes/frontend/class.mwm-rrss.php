@@ -23,7 +23,7 @@ if (!defined('ABSPATH') || !defined('MWM_RRSS_VERSION')) {
 if (!class_exists('mwm_rrss')) {
     /**
      * Implements the mwm_rrss class.
-     * 
+     *
      * This is the class that controls the entire plugin.
      *
      * @since 1.3.0
@@ -52,7 +52,7 @@ if (!class_exists('mwm_rrss')) {
          * Returns single instance of the class.
          *
          * @since 1.3.0
-         * 
+         *
          * @return \mwm_rrss
          */
         public static function get_instance()
@@ -70,7 +70,7 @@ if (!class_exists('mwm_rrss')) {
          * Initialice plugin and registers actions and filters to be used.
          *
          * @since 1.3.0
-         * 
+         *
          * @return \mwm_rrss
          */
         public function __construct()
@@ -97,7 +97,7 @@ if (!class_exists('mwm_rrss')) {
          * Enqueue scripts and styles.
          *
          * @since 1.3.0
-         * 
+         *
          * @return void
          */
         public function enqueue_scripts()
@@ -118,7 +118,7 @@ if (!class_exists('mwm_rrss')) {
          * Show the social media icon bar.
          *
          * @since 1.3.0
-         * 
+         *
          * @return string
          */
         public function before_after($content)
@@ -144,14 +144,16 @@ if (!class_exists('mwm_rrss')) {
                 return $fullcontent;
             else :
                 return $content;
-            endif; 
+            endif;
         }
 
         /**
          * Show the contents of the social media icon bar.
          *
-         * @since 1.3.0
-         * 
+         * @since 1.3.1
+         *
+         * @author Paco Marchante
+         *
          * @return string
          */
         public function get_content()
@@ -183,8 +185,8 @@ if (!class_exists('mwm_rrss')) {
                     break;
                 default: $alignment = 'alignment-start';
             }
-            $contenido = '<div class="mwm_rrss_contenedor '.$border_type.' '.$size.' '.$alignment.'">';
-        
+            $contenido = '<div class="mwm_rrss_contenedor '.$border_type.' '.$size.' '.$alignment.' '.$appaerance.'">';
+
             if (is_array($redes_sociales_activas) || is_object($redes_sociales_activas)) {
               foreach ($redes_sociales_activas as $red_social_activa) {
                 $contenido .= $this->get_rrss_link($red_social_activa, $appaerance);
@@ -193,87 +195,41 @@ if (!class_exists('mwm_rrss')) {
               $contenido .= $red_social_activas;
             }
             $contenido .= '</div>';
-        
+
             return $contenido;
         }
 
         /**
          * Show the required social media button.
          *
-         * @since 1.3.0
-         * 
+         * @since 1.3.1
+         *
+         * @author Paco Marchante
+         *
          * @return string
          */
         public function get_rrss_link($red_social_activa, $appaerance)
         {
-            switch($appaerance) {
-                case '0':
-                    switch ($red_social_activa) :
-                        case 'twitter':
-                            return '<a class="mwm_rrss mwm_twitter" mwm-rrss-url="https://twitter.com/intent/tweet?text='.get_the_title().' '.get_permalink().' vía @'.get_option(MWM_RRSS_SLUG.'-twitter').'">'.esc_html(__( "Twitter", MWM_RRSS_SLUG )).' </a>';
-                            break;
-                        case 'facebook':
-                            return '<a class="mwm_rrss mwm_facebook" mwm-rrss-url="https://www.facebook.com/sharer/sharer.php?u='. get_permalink().'">'.esc_html(__( "Facebook", "mwm-redes-sociales" )).' </a>';
-                            break;
-                        case 'pinterest':
-                            return '<a class="mwm_rrss mwm_pinterest" mwm-rrss-url="http://pinterest.com/pin/create/button/?url='. get_permalink() .'&media='.get_the_post_thumbnail_url().'&description='.get_the_title().'">'.esc_html(__( "Pinterest", MWM_RRSS_SLUG )).' </a>';
-                            break;
-                        case 'whatsapp':
-                            return '<a class="mwm_rrss mwm_whatsapp" href="whatsapp://send?text='. get_the_title() .' – '.get_permalink().'" data-action="share/whatsapp/share">'.esc_html(__("WhatsApp", MWM_RRSS_SLUG)).' </a>';
-                            break;
-                        case 'linkedin':
-                            return '<a class="mwm_rrss mwm_linkedin" mwm-rrss-url="https://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink() . '&title=' . get_the_title() . '&source=' . get_the_post_thumbnail_url().'">'.esc_html(__("Linkedin", MWM_RRSS_SLUG)).' </a>';
-                            break;
-                        default:
-                            return '';
-                            break;
-                    endswitch;
-                break;
-                case '1':
-                    switch ($red_social_activa) :
-                        case 'twitter':
-                            return '<a class="mwm_rrss mwm_twitter appearance-material" mwm-rrss-url="https://twitter.com/intent/tweet?text='.get_the_title().' '.get_permalink().' vía @'.get_option(MWM_RRSS_SLUG.'-twitter').'"></a>';
-                            break;
-                        case 'facebook':
-                            return '<a class="mwm_rrss mwm_facebook appearance-material" mwm-rrss-url="https://www.facebook.com/sharer/sharer.php?u='. get_permalink().'"></a>';
-                            break;
-                        case 'pinterest':
-                            return '<a class="mwm_rrss mwm_pinterest appearance-material" mwm-rrss-url="http://pinterest.com/pin/create/button/?url='. get_permalink() .'&media='.get_the_post_thumbnail_url().'&description='.get_the_title().'"></a>';
-                            break;
-                        case 'whatsapp':
-                            return '<a class="mwm_rrss mwm_whatsapp appearance-material" href="whatsapp://send?text='. get_the_title() .' – '.get_permalink().'" data-action="share/whatsapp/share"></a>';
-                            break;
-                        case 'linkedin':
-                            return '<a class="mwm_rrss mwm_linkedin appearance-material" mwm-rrss-url="https://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink() . '&title=' . get_the_title() . '&source=' . get_the_post_thumbnail_url().'"></a>';
-                            break;
-                        default:
-                            return '';
-                            break;
-                    endswitch;
-                break;
-                case '2':
-                    switch ($red_social_activa) :
-                        case 'twitter':
-                            return '<a class="mwm_rrss mwm_twitter appearance-material-color" mwm-rrss-url="https://twitter.com/intent/tweet?text='.get_the_title().' '.get_permalink().' vía @'.get_option(MWM_RRSS_SLUG.'-twitter').'"></a>';
-                            break;
-                        case 'facebook':
-                            return '<a class="mwm_rrss mwm_facebook appearance-material-color" mwm-rrss-url="https://www.facebook.com/sharer/sharer.php?u='. get_permalink().'"></a>';
-                            break;
-                        case 'pinterest':
-                            return '<a class="mwm_rrss mwm_pinterest appearance-material-color" mwm-rrss-url="http://pinterest.com/pin/create/button/?url='. get_permalink() .'&media='.get_the_post_thumbnail_url().'&description='.get_the_title().'"></a>';
-                            break;
-                        case 'whatsapp':
-                            return '<a class="mwm_rrss mwm_whatsapp appearance-material-color" href="whatsapp://send?text='. get_the_title() .' – '.get_permalink().'" data-action="share/whatsapp/share"></a>';
-                            break;
-                        case 'linkedin':
-                            return '<a class="mwm_rrss mwm_linkedin appearance-material-color" mwm-rrss-url="https://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink() . '&title=' . get_the_title() . '&source=' . get_the_post_thumbnail_url().'"></a>';
-                            break;
-                        default:
-                            return '';
-                            break;
-                    endswitch;
-                break;
-            }
+            switch ($red_social_activa) :
+                case 'twitter':
+                    return '<a class="mwm_rrss mwm_twitter" mwm-rrss-url="https://twitter.com/intent/tweet?text='.get_the_title().' '.get_permalink().' vía @'.get_option(MWM_RRSS_SLUG.'-twitter').'"><span>'.esc_html(__( "Twitter", MWM_RRSS_SLUG )).'</span></a>';
+                    break;
+                case 'facebook':
+                    return '<a class="mwm_rrss mwm_facebook" mwm-rrss-url="https://www.facebook.com/sharer/sharer.php?u='. get_permalink().'"><span>'.esc_html(__( "Facebook", "mwm-redes-sociales" )).'</span></a>';
+                    break;
+                case 'pinterest':
+                    return '<a class="mwm_rrss mwm_pinterest" mwm-rrss-url="http://pinterest.com/pin/create/button/?url='. get_permalink() .'&media='.get_the_post_thumbnail_url().'&description='.get_the_title().'"><span>'.esc_html(__( "Pinterest", MWM_RRSS_SLUG )).'</span></a>';
+                    break;
+                case 'whatsapp':
+                    return '<a class="mwm_rrss mwm_whatsapp" href="whatsapp://send?text='. get_the_title() .' – '.get_permalink().'" data-action="share/whatsapp/share"><span>'.esc_html(__("WhatsApp", MWM_RRSS_SLUG)).'</span></a>';
+                    break;
+                case 'linkedin':
+                    return '<a class="mwm_rrss mwm_linkedin" mwm-rrss-url="https://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink() . '&title=' . get_the_title() . '&source=' . get_the_post_thumbnail_url().'"><span>'.esc_html(__("Linkedin", MWM_RRSS_SLUG)).'</span></a>';
+                    break;
+                default:
+                    return '';
+                    break;
+            endswitch;
         }
 
         /**

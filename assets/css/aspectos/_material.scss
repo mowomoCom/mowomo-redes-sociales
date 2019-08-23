@@ -1,0 +1,32 @@
+.material {
+
+    .mwm_rrss{
+        border: 2px solid #000;
+        border-radius: 100%;
+        padding: 0;
+        height: 3rem;
+        width: 3rem;
+        font-size: 1rem;
+        background-color: #fff;
+        color: #000;
+        box-shadow: none;
+        transition: all 0.2s ease-in-out;
+        &::before {
+            margin: 0;
+        }
+
+        &:hover {
+            color: #fff;
+            background-color: #000;
+        }
+    }
+
+    span{
+        display: none;
+    }
+
+    .mwm_whatsapp {
+        font-size: 1.3rem;
+    }
+
+}

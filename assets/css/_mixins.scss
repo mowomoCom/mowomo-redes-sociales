@@ -1,0 +1,19 @@
+@mixin color-b($color) {
+    background: $color;
+
+    &:hover{
+        background: darken($color, 5%);
+    }
+
+}
+
+@mixin material-color ($color){
+    border-color: $color;
+    color: $color;
+
+    &:hover{
+        color:#fff;
+        background: $color;
+    }
+
+}

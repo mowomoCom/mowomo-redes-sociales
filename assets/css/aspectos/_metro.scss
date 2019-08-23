@@ -1,0 +1,42 @@
+.metro{
+
+    .mwm_rrss {
+        line-height: 2.5rem;
+        color:#fff; /* Force white text, some themes has links colored */
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0 1rem;
+        margin: .3rem .3rem;
+    }
+
+    .mwm_twitter {
+
+        @include color-b($color-twitter);
+
+    }
+
+    .mwm_facebook {
+
+        @include color-b($color-facebook);
+
+    }
+
+
+    .mwm_pinterest {
+
+        @include color-b($color-pinterest);
+
+    }
+
+    .mwm_linkedin {
+
+        @include color-b($color-linkedin);
+
+    }
+
+    .mwm_whatsapp {
+
+        @include color-b($color-whatsapp);
+
+    }
+
+}

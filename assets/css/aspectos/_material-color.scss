@@ -1,0 +1,42 @@
+.material-color {
+
+    .mwm_rrss{
+        border: 2px solid;
+        border-radius: 100%;
+        padding: 0;
+        height: 3rem;
+        width: 3rem;
+        font-size: 1rem;
+        background-color: transparent;
+        box-shadow: none;
+        transition: all 0.2s ease-in-out;
+
+        &::before {
+            margin: 0;
+        }
+
+    }
+
+    span{
+        display: none;
+    }
+
+    .mwm_twitter {
+        @include material-color($color-twitter);
+    }
+    .mwm_facebook {
+        @include material-color($color-facebook);
+    }
+    .mwm_pinterest {
+        @include material-color($color-pinterest);
+    }
+    .mwm_linkedin {
+        @include material-color($color-linkedin);
+    }
+    .mwm_whatsapp {
+        font-size: 1.3rem;
+        @include material-color($color-whatsapp);
+
+    }
+
+}

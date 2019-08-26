@@ -6,11 +6,11 @@
  * Author: mowomo
  * Author URI: https://mowomo.com/sobre-mowomo
  * Text Domain: mowomo-redes-sociales
- * Domain Path: /lenguajes/
- * Version: 1.3.0
+ * Domain Path: /languages/
+ * Version: 1.3.1
  * License: GPLv2 or later.
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * WC requires at least: 5.0.0
+ * WC requires at least: 4.6
  * WC tested up to: 5.2.2
  */
 
@@ -31,7 +31,7 @@ if (!defined('ABSPATH')) {
 if (defined('MWM_RRSS_VERSION')) {
     return;
 } else {
-    define('MWM_RRSS_VERSION', '1.3.0');
+    define('MWM_RRSS_VERSION', '1.3.1');
 }
 if (!defined('MWM_RRSS_SLUG')) {
     define('MWM_RRSS_SLUG', 'mowomo-redes-sociales');

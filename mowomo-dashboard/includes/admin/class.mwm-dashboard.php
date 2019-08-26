@@ -73,9 +73,9 @@ if (!class_exists('mwm_dashboard')) {
             add_action('admin_init', array($this, 'init') );
 
             // Showing admin page
-            add_action('admin_menu', array($this, 'add_menu_to_admin'), 9);
-            add_action('admin_menu', array($this, 'add_license_page_to_admin'), 20);
-            add_filter('admin_footer_text', array($this, 'admin_footer'));
+            // add_action('admin_menu', array($this, 'add_menu_to_admin'), 9);
+            // add_action('admin_menu', array($this, 'add_license_page_to_admin'), 20);
+            // add_filter('admin_footer_text', array($this, 'admin_footer'));
         }
 
         /**

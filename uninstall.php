@@ -16,13 +16,16 @@ if (!defined('WP_UNINSTALL_PLUGIN')) {
     die;
 }
 
-//Eliminar cuenta de Twitter
-delete_option(MWM_RRSS_SLUG.'-twitter');
-//Eliminar posición de los botones
-delete_option(MWM_RRSS_SLUG.'-posicion');
-//Eliminar botones que se muestran
-delete_option('mwm_rrss_show_tw');
-delete_option('mwm_rrss_show_fb');
-delete_option('mwm_rrss_show_pt');
-delete_option('mwm_rrss_show_gp');
+if (!defined('MWM_RRSS_SLUG')) {
+    define('MWM_RRSS_SLUG', 'mowomo-redes-sociales');
+}
 
+delete_option( MWM_RRSS_SLUG.'-init');
+delete_option( MWM_RRSS_SLUG.'-actives');
+delete_option( MWM_RRSS_SLUG.'-posicion');
+delete_option( MWM_RRSS_SLUG.'-twitter');
+delete_option( MWM_RRSS_SLUG.'-appearance');
+delete_option( MWM_RRSS_SLUG.'-border-type');
+delete_option( MWM_RRSS_SLUG.'-size');
+delete_option( MWM_RRSS_SLUG.'-alignment');
+delete_option( MWM_RRSS_SLUG.'-orientation');

@@ -105,8 +105,8 @@
                             padding: .3rem !important;
                             vertical-align: middle;
                             height: 2rem !important;
-                            background-color: #f3feff;
-                            color: #00cad5;
+                            background-color: #00cad5;
+                            color: #ffffff;
                             outline: none !important;
                             height: unset;
                             font-size: 12px;
@@ -117,12 +117,15 @@
                             transition: all .2s ease-in-out;
 
                             &:hover {
-                                background-color: #00cad5;
-                                color: #ffffff;
+                                background-color: #f3feff;
+                                color: #00cad5;
                                 cursor: pointer;
                             }
+                    
                             &:active {
-                                background-color: #5ed3da;
+                                background-color: #c5f9fd;
+                                color: #00cad5 !important;
+                                transform: none !important;
                             }
                         }
                     }
@@ -208,8 +211,8 @@
     .button-primary {
         border: 2px solid #00bac3;
         padding: .2rem .8rem;
-        background-color: #f3feff;
-        color: #00cad5;
+        background-color: #00cad5;
+        color: #ffffff;
         height: unset;
         font-weight: bold;
         text-shadow: none;
@@ -218,12 +221,13 @@
         transition: all .2s ease-in-out;
 
         &:hover {
-            background-color: #00cad5;
-            color: #ffffff;
+            background-color: #f3feff;
+            color: #00cad5;
         }
 
         &:active {
-            background-color: #5ed3da;
+            background-color: #c5f9fd;
+            color: #00cad5 !important;
             transform: none !important;
         }
     }

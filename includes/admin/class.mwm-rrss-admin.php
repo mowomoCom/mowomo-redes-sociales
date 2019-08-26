@@ -66,6 +66,9 @@ if (!class_exists('mwm_rrss_admin')) {
          */
         public function __construct()
         {
+            // Check if the plugin has been updated
+            $this->check_version();
+
             // Adding scripts
             add_action('admin_enqueue_scripts', array($this, 'enqueue_scripts'));
 
@@ -75,6 +78,31 @@ if (!class_exists('mwm_rrss_admin')) {
             // Showing admin page
             add_action('admin_menu', array($this, 'show_page'));
             add_filter('admin_footer_text', array($this, 'admin_footer'));
+        }
+
+        /**
+         * Check if the plugin has been updated and update the plugin information then.
+         *
+         * @since 1.3.1
+         * 
+         * @return void
+         */
+        public function check_version() {
+            if (MWM_RRSS_VERSION !== get_option(MWM_RRSS_SLUG.'-version')) {
+                update_option(MWM_RRSS_SLUG.'-version', MWM_RRSS_VERSION);
+
+                if (get_option('mwm_rrss_actives') !== false) {
+                    update_option(MWM_RRSS_SLUG.'-actives', get_option('mwm_rrss_actives'));
+                }
+
+                if (get_option('mwm_rrss_posicion') !== false) {
+                    update_option(MWM_RRSS_SLUG.'-posicion', get_option('mwm_rrss_posicion'));
+                }
+
+                if (get_option('mwm_rrss_twitter') !== false) {
+                    update_option(MWM_RRSS_SLUG.'-twitter', get_option('mwm_rrss_twitter'));
+                }
+            }
         }
 
         /**
@@ -113,45 +141,44 @@ if (!class_exists('mwm_rrss_admin')) {
             register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-actives');
             register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-posicion');
             register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-twitter');
-            register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-appearance');
-            register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-border-type');
-            register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-size');
-            register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-alignment');
-            register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-orientation');
+            // register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-appearance');
+            // register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-border-type');
+            // register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-size');
+            // register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-alignment');
+            // register_setting(MWM_RRSS_SLUG.'-options', MWM_RRSS_SLUG.'-orientation');
 
-            $update_message = 'Mensaje de actualización';
-            $update_url = 'https://www.mowomo.com/';
-            $plugin_data = array(
-                MWM_RRSS_SLUG => array(
-                    'name' => __('mowomo Redes Sociales', MWM_RRSS_SLUG),
-                    'update_message' => __($update_message, MWM_RRSS_SLUG), 
-                    'update_url' => $update_url,
-                    'pro' => MWM_RRSS_PRO
-                )
-            );
-            if (!get_option('mwm-plugins')) {
-                update_option('mwm-plugins', $plugin_data);
-            } else {
-                $plugins = get_option('mwm-plugins');
-                $plugins = array_merge($plugins, $plugin_data);
-                update_option('mwm-plugins', $plugins);
-            }
+            // $update_message = 'Mensaje de actualización';
+            // $update_url = 'https://www.mowomo.com/';
+            // $plugin_data = array(
+            //     MWM_RRSS_SLUG => array(
+            //         'name' => __('mowomo Redes Sociales', MWM_RRSS_SLUG),
+            //         'update_message' => __($update_message, MWM_RRSS_SLUG), 
+            //         'update_url' => $update_url,
+            //         'pro' => MWM_RRSS_PRO
+            //     )
+            // );
+            // if (!get_option('mwm-plugins')) {
+            //     update_option('mwm-plugins', $plugin_data);
+            // } else {
+            //     $plugins = get_option('mwm-plugins');
+            //     $plugins = array_merge($plugins, $plugin_data);
+            //     update_option('mwm-plugins', $plugins);
+            // }
 
-            $plugin_notices = mwm_plugin_notices();
-            $plugin_to_notice = array();
+            // $plugin_notices = mwm_plugin_notices();
+            // $plugin_to_notice = array();
             
-            if (get_option(MWM_RRSS_SLUG.'-twitter') == "") {
-                $plugin_to_notice = array_merge($plugin_to_notice, array(
-                    MWM_RRSS_SLUG.'-twitter' => array(
-                        'name' => __('Twitter profile', MWM_RRSS_SLUG),
-                        'message' => __('There is no twitter profile configured', MWM_RRSS_SLUG), 
-                        'slug' => MWM_RRSS_SLUG,
-                    )
-                ));
-            }
+            // if (get_option(MWM_RRSS_SLUG.'-twitter') == "") {
+            //     $plugin_to_notice = array_merge($plugin_to_notice, array(
+            //         MWM_RRSS_SLUG.'-twitter' => array(
+            //             'name' => __('Twitter profile', MWM_RRSS_SLUG),
+            //             'message' => __('There is no twitter profile configured', MWM_RRSS_SLUG), 
+            //             'slug' => MWM_RRSS_SLUG,
+            //         )
+            //     ));
+            // }
 
-            update_option('mwm-plugin-notices', array_merge($plugin_notices, $plugin_to_notice));
-            
+            // update_option('mwm-plugin-notices', array_merge($plugin_notices, $plugin_to_notice));
         }
 
         /**
@@ -163,7 +190,7 @@ if (!class_exists('mwm_rrss_admin')) {
          */
         public function show_page()
         {
-            add_submenu_page( MWM_FRA_SLUG, 'Redes sociales', __('Configuración Redes Sociales',MWM_RRSS_SLUG), 'manage_options', 'mwm-rrss-submenu-page', array($this, 'get_page'));
+            add_menu_page( 'mowomo', __('mowomo Redes Sociales', MWM_RRSS_SLUG), 'manage_options', MWM_RRSS_SLUG, array($this, 'get_page'), MWM_FRA_ASS.'images/logo/logo-mowomo-white.svg' );
         }
 
         /**
@@ -180,8 +207,8 @@ if (!class_exists('mwm_rrss_admin')) {
                 'title' => __('mowomo Redes Sociales', MWM_RRSS_SLUG),
                 'page_slug' => MWM_RRSS_SLUG,
                 'tabs' => array(
-                    __('Configuración general') => array('admin/admin', 'general-configuration', array()),
-                    __('Configuración Premium') => array('admin/admin', 'premium-configuration', array())
+                    __('Configuración general') => array('admin/admin', 'general-configuration', array())
+                    // __('Configuración Premium') => array('admin/admin', 'premium-configuration', array())
                 ),
                 'plugin_slug' => MWM_RRSS_SLUG
             );

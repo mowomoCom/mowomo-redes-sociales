@@ -125,9 +125,8 @@ if (!class_exists('mwm_rrss')) {
         {
             if(is_single() && get_post_type() =='post') :
                 $contenido = $this->get_content();
-                $posicion = get_option(MWM_RRSS_SLUG.'-posicion');
+                $posicion = get_option(MWM_RRSS_SLUG.'-posicion', '0');
                 switch ($posicion) :
-                    case '':
                     case '0':
                         $fullcontent = $content;
                         break;
@@ -156,9 +155,9 @@ if (!class_exists('mwm_rrss')) {
          */
         public function get_content()
         {
-            $redes_sociales_activas   = get_option(MWM_RRSS_SLUG.'-actives');
-            $appaerance = get_option(MWM_RRSS_SLUG.'-appearance');
-            switch(get_option(MWM_RRSS_SLUG.'-border-type')) {
+            $redes_sociales_activas = get_option(MWM_RRSS_SLUG.'-actives');
+            $appaerance = get_option(MWM_RRSS_SLUG.'-appearance', '0');
+            switch(get_option(MWM_RRSS_SLUG.'-border-type', '0')) {
                 case '0' :  $border_type = 'border-square';
                     break;
                 case '1' :  $border_type = 'border-rounded';
@@ -167,14 +166,14 @@ if (!class_exists('mwm_rrss')) {
                     break;
                 default: $border_type = 'border-square';
             }
-            switch(get_option(MWM_RRSS_SLUG.'-size')) {
+            switch(get_option(MWM_RRSS_SLUG.'-size', '0')) {
                 case '0' :  $size = 'size-static';
                     break;
                 case '1' :  $size = 'size-responsive';
                     break;
                 default: $size = 'size-static';
             }
-            switch(get_option(MWM_RRSS_SLUG.'-alignment')) {
+            switch(get_option(MWM_RRSS_SLUG.'-alignment', '0')) {
                 case '0' :  $alignment = 'alignment-start';
                     break;
                 case '1' :  $alignment = 'alignment-center';

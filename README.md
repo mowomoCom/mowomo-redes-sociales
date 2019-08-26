@@ -1,9 +1,9 @@
 === mowomo Redes Sociales  ===
-Contributors: mowomo, pacomarchante, victorsaenztm, pablomiralles, mercedes-blogalizate, blogalizate, dariobf
+Contributors: mowomo, pacomarchante, victorsaenztm, pablomiralles, mercedes-blogalizate, blogalizate, dariobf, pedromcj95
 Tags: buttons, icons, share, social media, social share, social buttons
 Requires at least: 4.6
-Tested up to: 5.1.1
-Stable tag: 5.1.1
+Tested up to: 5.2.2
+Stable tag: 1.3.1
 Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -37,6 +37,14 @@ You can add your Twitter account to get mentioned when someone share your entry 
 
 
 == Changelog ==
+= 1.3.1 =
+* Improved the way in which the plugin is updated
+
+= 1.3.0 =
+* Improved the appearance of social media bars
+* Improved plugin internal structure
+* Improved the visual section of the WordPress administrator
+
 = 1.2.2 =
 * Added social icons as font-face for better performance (less http requests)
 * Cleared DOM for better performance

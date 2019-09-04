@@ -20,12 +20,13 @@ if (!defined('MWM_RRSS_SLUG')) {
     define('MWM_RRSS_SLUG', 'mowomo-redes-sociales');
 }
 
-delete_option( MWM_RRSS_SLUG.'-init');
-delete_option( MWM_RRSS_SLUG.'-actives');
-delete_option( MWM_RRSS_SLUG.'-posicion');
-delete_option( MWM_RRSS_SLUG.'-twitter');
-delete_option( MWM_RRSS_SLUG.'-appearance');
-delete_option( MWM_RRSS_SLUG.'-border-type');
-delete_option( MWM_RRSS_SLUG.'-size');
-delete_option( MWM_RRSS_SLUG.'-alignment');
-delete_option( MWM_RRSS_SLUG.'-orientation');
+delete_option(MWM_RRSS_SLUG.'-init');
+delete_option(MWM_RRSS_SLUG.'-actives');
+delete_option(MWM_RRSS_SLUG.'-posicion');
+delete_option(MWM_RRSS_SLUG.'-twitter');
+delete_option(MWM_RRSS_SLUG.'-appearance');
+delete_option(MWM_RRSS_SLUG.'-border-type');
+delete_option(MWM_RRSS_SLUG.'-size');
+delete_option(MWM_RRSS_SLUG.'-alignment');
+delete_option(MWM_RRSS_SLUG.'-orientation');
+delete_option(MWM_RRSS_SLUG.'-version');

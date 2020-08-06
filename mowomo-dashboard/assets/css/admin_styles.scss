@@ -44,6 +44,19 @@
         }
 	}
 
+	@media screen and (min-width:768px) and (max-width: 1023px){
+		.mwm-panel-sidebar {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			&__block{
+				flex-basis: 45%;
+			}
+
+		}
+	}
+
 	@media screen and (min-width:1024px){
 		.mwm-panel-principal {
 			width: 66%;

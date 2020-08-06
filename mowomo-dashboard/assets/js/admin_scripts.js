@@ -12,8 +12,6 @@ jQuery(document).ready(function() {
      * Detects when the user click on any tab
      *
      * @since      1.0.0
-     *
-     * @return string
      */
     jQuery(".nav-tab").on("click", function() {
         var tab = jQuery(this).attr("mwm-tab");
@@ -36,8 +34,6 @@ jQuery(document).ready(function() {
      * Detects when user change the url with the navigator buttons
      *
      * @since      1.0.0
-     *
-     * @return string
      */
     jQuery(window).on("hashchange", function() {
         var actual_hash = jQuery(location)
@@ -56,8 +52,6 @@ jQuery(document).ready(function() {
      * Dinamic toggle buttons
      *
      * @since      1.0.0
-     *
-     * @return string
      */
     jQuery("label.mwm-toggle").on("click", function() {
         if (
@@ -76,11 +70,42 @@ jQuery(document).ready(function() {
     });
 
     /**
+     * Dinamic radio option boxes
+     *
+     * @since      1.0.0
+     */
+    jQuery(".mwm-option-boxes .mwm-option-box").on("click", function() {
+        jQuery(this)
+            .find("input")
+            .prop("checked", true);
+        jQuery(this)
+            .closest(".mwm-option-boxes")
+            .find(".mwm-option-box")
+            .removeClass("active");
+        jQuery(this).addClass("active");
+    });
+    jQuery(".mwm-option-boxes .mwm-option-box").on("click", function() {
+        jQuery(this)
+            .find("input")
+            .prop("checked", true);
+    });
+    jQuery("select[name='mowomo-redes-sociales-alignment']").on(
+        "change",
+        function() {
+            jQuery(".mwm-option-boxes .mwm-option-box .mwm_rrss_contenedor")
+                .removeClass("mwm_rrss_alingment_1")
+                .removeClass("mwm_rrss_alingment_2")
+                .removeClass("mwm_rrss_alingment_3");
+            jQuery(
+                ".mwm-option-boxes .mwm-option-box .mwm_rrss_contenedor"
+            ).addClass("mwm_rrss_alingment_" + jQuery(this).val());
+        }
+    );
+
+    /**
      * Copy to clipboard
      *
      * @since      1.0.0
-     *
-     * @return string
      */
     jQuery(".input-group button").on("click", function() {
         jQuery(this)

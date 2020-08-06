@@ -1,14 +1,13 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: mowomo Redes Sociales\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-12 16:14+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"PO-Revision-Date: 2020-06-12 16:15+0000\n"
+"Last-Translator: Admin\n"
+"Language-Team: Español\n"
+"Language: es_ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,164 +17,164 @@ msgstr ""
 #: includes/frontend/class.mwm-rrss.php:195
 #: includes/frontend/rrss-resources.php:41
 msgid "Twitter"
-msgstr ""
+msgstr "Twitter"
 
 #: includes/frontend/class.mwm-rrss.php:198
 msgid "Facebook"
-msgstr ""
+msgstr "Facebook"
 
 #: includes/frontend/class.mwm-rrss.php:201
 #: includes/frontend/rrss-resources.php:49
 msgid "Pinterest"
-msgstr ""
+msgstr "Pinterest"
 
 #: includes/frontend/class.mwm-rrss.php:204
 #: includes/frontend/rrss-resources.php:53
 msgid "Linkedin"
-msgstr ""
+msgstr "Linkedin"
 
 #: includes/frontend/class.mwm-rrss.php:207
 #: includes/frontend/rrss-resources.php:57
 msgid "WhatsApp"
-msgstr ""
+msgstr "WhatsApp"
 
 #: includes/admin/class.mwm-rrss-admin.php:154
 msgid "Fill in your Twitter profile"
-msgstr ""
+msgstr "Rellena tu perfil de Twitter"
 
 #: includes/admin/class.mwm-rrss-admin.php:154
 msgid "The Twitter user profile has not been filled"
-msgstr ""
+msgstr "El perfil de usuario de Twitter no ha sido rellenado"
 
 #. Name of the plugin
 #: includes/admin/class.mwm-rrss-admin.php:167
 msgid "mowomo Redes Sociales"
-msgstr ""
+msgstr "mowomo Redes Sociales"
 
 #: includes/admin/class.mwm-rrss-admin.php:182
 msgid "mowomo Redes Sociales - mowomo"
-msgstr ""
+msgstr "mowomo Redes Sociales - mowomo"
 
 #: includes/admin/class.mwm-rrss-admin.php:185
 msgid "General configuration"
-msgstr ""
+msgstr "Configuración general"
 
 #: includes/admin/class.mwm-rrss-admin.php:186
 msgid "Advanced configuration"
-msgstr ""
+msgstr "Configuración avanzada"
 
 #: includes/admin/class.mwm-rrss-admin.php:208
 msgid "Thanks for using mowomo Redes Sociales, plugin made by "
-msgstr ""
+msgstr "Gracias por usar el mowomo Redes Sociales, hecho por el equipo"
 
 #: includes/admin/class.mwm-rrss-admin.php:208
 msgid "mowomo team"
-msgstr ""
+msgstr "mowomo tea,"
 
 #: templates/admin/admin-advanced-configuration.php:33
 msgid "Colored with square edges"
-msgstr ""
+msgstr "En color con bordes cuadrados"
 
 #: templates/admin/admin-advanced-configuration.php:34
 msgid "Colored with slightly rounded edges"
-msgstr ""
+msgstr "En color con bordes ligeramente redondeados"
 
 #: templates/admin/admin-advanced-configuration.php:35
 msgid "Only colored icon with square borders"
-msgstr ""
+msgstr "Solo el icono en color con bordes cuadrados"
 
 #: templates/admin/admin-advanced-configuration.php:36
 msgid "Only colored icon with slightly rounded edges"
-msgstr ""
+msgstr "Solo el icono en color con bordes ligeramente redondeados"
 
 #: templates/admin/admin-advanced-configuration.php:37
 msgid "Only colored icon with rounded edges"
-msgstr ""
+msgstr "Solo el icono en color con bordes redondeados"
 
 #: templates/admin/admin-advanced-configuration.php:38
 msgid "In black and white with square edges"
-msgstr ""
+msgstr "En blanco y negro con bordes cuadrados"
 
 #: templates/admin/admin-advanced-configuration.php:39
 msgid "In black and white with slightly rounded edges"
-msgstr ""
+msgstr "En blanco y negro con bordes ligeramente redondeados"
 
 #: templates/admin/admin-advanced-configuration.php:40
 msgid "Only black and white icon with square borders"
-msgstr ""
+msgstr "Solo el icono en blanco y negro con bordes cuadrados"
 
 #: templates/admin/admin-advanced-configuration.php:41
 msgid "Only black and white icon with slightly rounded edges"
-msgstr ""
+msgstr "Solo el icono en blanco y negro con bordes ligeramente redondeados"
 
 #: templates/admin/admin-advanced-configuration.php:42
 msgid "Only black and white icon with rounded edges"
-msgstr ""
+msgstr "Solo el icono en blanco y negro con bordes redondeados"
 
 #: templates/admin/admin-advanced-configuration.php:46
 msgid "Button desing"
-msgstr ""
+msgstr "Diseño de los botones"
 
 #: templates/admin/admin-advanced-configuration.php:52
 msgid "Appearance"
-msgstr ""
+msgstr "Apariencia"
 
 #: templates/admin/admin-advanced-configuration.php:78
 msgid "Button alignment"
-msgstr ""
+msgstr "Alineamiento de los botones"
 
 #: templates/admin/admin-advanced-configuration.php:81
 msgid "On the left"
-msgstr ""
+msgstr "A la izquierda"
 
 #: templates/admin/admin-advanced-configuration.php:82
 msgid "In the middle"
-msgstr ""
+msgstr "En el medio"
 
 #: templates/admin/admin-advanced-configuration.php:83
 msgid "On the right"
-msgstr ""
+msgstr "A la derecha"
 
 #: templates/admin/admin-general-configuration.php:44
 #: templates/admin/admin-general-configuration.php:48
 msgid "Position of buttons"
-msgstr ""
+msgstr "Posición de los botones"
 
 #: templates/admin/admin-general-configuration.php:51
 msgid "Don't show"
-msgstr ""
+msgstr "No mostrar"
 
 #: templates/admin/admin-general-configuration.php:52
 msgid "Before the post"
-msgstr ""
+msgstr "Antes de la entrada"
 
 #: templates/admin/admin-general-configuration.php:53
 msgid "After the post"
-msgstr ""
+msgstr "Después de la entrada"
 
 #: templates/admin/admin-general-configuration.php:54
 msgid "Before and after the post"
-msgstr ""
+msgstr "Antes y después de la entrada"
 
 #: templates/admin/admin-general-configuration.php:56
 msgid "Choose where you want to make the social buttons appear"
-msgstr ""
+msgstr "Elige dónde quieres que aparezcan los botones sociales"
 
 #: templates/admin/admin-general-configuration.php:60
 msgid "Twitter user"
-msgstr ""
+msgstr "Usuario de Twitter"
 
 #: templates/admin/admin-general-configuration.php:62
 msgid "Insert the user without @. E.j: mowomocom"
-msgstr ""
+msgstr "Introduce el usuario sin @. E.j: mowomocom"
 
 #: templates/admin/admin-general-configuration.php:67
 msgid "Which buttons do you want to show?"
-msgstr ""
+msgstr "¿Qué botones quieres mostrar?"
 
 #: templates/admin/admin-general-configuration.php:82
 msgid "Shortcode for you to use wherever you want"
-msgstr ""
+msgstr "Código corto (shortcode) para que lo uses donde quieras"
 
 #. Description of the plugin
 msgid ""
@@ -183,15 +182,18 @@ msgid ""
 "entries on their social networks. If you only need to offer the possibility "
 "to your readers of sharing your blog entries... Why getting complicated?"
 msgstr ""
+"Ligero y sencillo plugin para que los lectores de tu blog puedan compartir "
+"tus entradas en sus redes sociales. Si sólo necesitas ofrecer la posibilidad "
+"a tus lectores de compartir las entradas de tu blog... ¿Por qué complicarse?"
 
 #. URI of the plugin
 msgid "https://mowomo.com/"
-msgstr ""
+msgstr "https://mowomo.com/"
 
 #. Author of the plugin
 msgid "mowomo"
-msgstr ""
+msgstr "mowomo"
 
 #. Author URI of the plugin
 msgid "https://mowomo.com/sobre-mowomo"
-msgstr ""
+msgstr "https://mowomo.com/sobre-mowomo"

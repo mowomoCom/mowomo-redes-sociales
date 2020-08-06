@@ -1,0 +1,238 @@
+@font-face {
+  font-family: "mwm-rrss";
+  src: url("data:application/font-ttf;charset=utf-8;base64,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") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.mwm_rrss {
+  line-height: 2.5em;
+  color: #fff !important;
+  /* Force white text, some themes has links colored */
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 1em;
+  margin: 0.3em 0.3em !important;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+a.mwm_rrss:first-child() {
+  margin-left: 0 !important;
+}
+
+a.mwm_rrss:last-child() {
+  margin-right: 0 !important;
+}
+
+.mwm_rrss::before {
+  content: "";
+  display: block;
+  margin-right: 0.2em;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "mwm-rrss" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mwm_twitter {
+  background: #00aced;
+}
+
+.mwm_twitter:hover {
+  background: #0092cc;
+}
+
+.mwm_twitter::before {
+  content: "\e904";
+}
+
+.mwm_facebook {
+  background: #3b5998;
+}
+
+.mwm_facebook:hover {
+  background: #344c80;
+}
+
+.mwm_facebook::before {
+  content: "\e903";
+}
+
+.mwm_pinterest {
+  background: #c61d25;
+}
+
+.mwm_pinterest:hover {
+  background: #9d181e;
+}
+
+.mwm_pinterest::before {
+  content: "\e902";
+}
+
+.mwm_linkedin {
+  background: #0077b5;
+}
+
+.mwm_linkedin:hover {
+  background: #006ba5;
+}
+
+.mwm_linkedin::before {
+  content: "\e901";
+  margin-top: -0.2em;
+}
+
+.mwm_whatsapp {
+  background: #009487;
+}
+
+.mwm_whatsapp:hover {
+  background: #006b62;
+}
+
+.mwm_whatsapp::before {
+  content: "\e900";
+}
+
+.mwm_rrss_contenedor {
+  font-size: 16px;
+  margin: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_alingment_1 {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_alingment_2 {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_alingment_3 {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.mwm_rrss_contenedor .mwm_rrss {
+  text-decoration: none !important;
+  -webkit-transition: all 0.2s ease-in-out !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_1 .mwm_rrss {
+  border-radius: 0;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_2 .mwm_rrss {
+  border-radius: 5px;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_3 .mwm_rrss, .mwm_rrss_contenedor.mwm_rrss_appearance_4 .mwm_rrss {
+  border: 2px solid #000;
+  color: #000 !important;
+  background-color: #fff;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_3 .mwm_rrss:hover, .mwm_rrss_contenedor.mwm_rrss_appearance_4 .mwm_rrss:hover {
+  color: #fff !important;
+  background-color: #000;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_3 .mwm_rrss {
+  border-radius: 0;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_4 .mwm_rrss {
+  border-radius: 5px;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_5 .mwm_rrss {
+  border-radius: 0;
+  height: 2.5em;
+  width: 2.5em;
+  padding: 0;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_5 .mwm_rrss:before {
+  margin-right: 0 !important;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_6 .mwm_rrss {
+  border-radius: 5px;
+  height: 2.5em;
+  width: 2.5em;
+  padding: 0;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_6 .mwm_rrss:before {
+  margin-right: 0 !important;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_7 .mwm_rrss {
+  border-radius: 100%;
+  height: 2.5em;
+  width: 2.5em;
+  padding: 0;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_7 .mwm_rrss:before {
+  margin-right: 0 !important;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_8 .mwm_rrss, .mwm_rrss_contenedor.mwm_rrss_appearance_9 .mwm_rrss, .mwm_rrss_contenedor.mwm_rrss_appearance_10 .mwm_rrss {
+  border: 2px solid #000;
+  color: #000 !important;
+  background-color: #fff;
+  height: 2.5em;
+  width: 2.5em;
+  padding: 0;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_8 .mwm_rrss:before, .mwm_rrss_contenedor.mwm_rrss_appearance_9 .mwm_rrss:before, .mwm_rrss_contenedor.mwm_rrss_appearance_10 .mwm_rrss:before {
+  margin-right: 0 !important;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_8 .mwm_rrss:hover, .mwm_rrss_contenedor.mwm_rrss_appearance_9 .mwm_rrss:hover, .mwm_rrss_contenedor.mwm_rrss_appearance_10 .mwm_rrss:hover {
+  color: #fff !important;
+  background-color: #000;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_8 .mwm_rrss {
+  border-radius: 0;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_9 .mwm_rrss {
+  border-radius: 0.25em;
+}
+
+.mwm_rrss_contenedor.mwm_rrss_appearance_10 .mwm_rrss {
+  border-radius: 100%;
+}
+/*# sourceMappingURL=styles.css.map */

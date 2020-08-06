@@ -9,7 +9,7 @@
 /**
  * Detects if the plugin has been entered directly.
  *
- * @since 1.3.0
+ * @since 1.0.0
  */
 if (!defined('ABSPATH') || !defined('MWM_RRSS_VERSION')) {
     exit; // Exit if accessed directly.

@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 /**
  * Define constants.
  *
- * @since 1.3.0
+ * @since 1.0.0
  */
 if (defined('MWM_FRA_VERSION')) {
     return;
@@ -62,6 +62,9 @@ if (!defined('MWM_FRA_TPL')) {
 if (!defined('MWM_FRA_PLU_TPL')) {
     define('MWM_FRA_PLU_TPL', MWM_FRA_DIR.'templates/');
 }
+if (!defined('MWM_FRA_LIB')) {
+    define('MWM_FRA_LIB', MWM_FRA_DIR.MWM_FRA_SLUG.'/lib/');
+}
 
 /**
  * Plugin dashboard Construction.
@@ -73,11 +76,11 @@ if (!defined('MWM_FRA_PLU_TPL')) {
 function mwm_dashboard_constructor() 
 {
     // Load textdomain
-    load_textdomain( MWM_FRA_SLUG, MWM_FRA_LAN.MWM_FRA_SLUG.'.mo');
+    load_plugin_textdomain( MWM_FRA_SLUG, FALSE, MWM_FRA_LAN );
 
     // Load includes
-    require_once MWM_FRA_INC.'admin/class.mwm-dashboard.php';
-    require_once MWM_FRA_INC.'functions.mwm-dashboard.php';
+    require_once MWM_FRA_LIB.'mowomo-resources.php';
+    require_once MWM_FRA_INC.'functions.php';
 
     // Let's start the game =)
     mwm_dashboard();

@@ -1,0 +1,197 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: mowomo Redes Sociales\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-12 16:03+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.0; wp-5.4.2"
+
+#: includes/admin/class.mwm-rrss-admin.php:186
+msgid "Advanced configuration"
+msgstr ""
+
+#: templates/admin/admin-general-configuration.php:53
+msgid "After the post"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:52
+msgid "Appearance"
+msgstr ""
+
+#: templates/admin/admin-general-configuration.php:54
+msgid "Before and after the post"
+msgstr ""
+
+#: templates/admin/admin-general-configuration.php:52
+msgid "Before the post"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:78
+msgid "Button alignment"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:46
+msgid "Button desing"
+msgstr ""
+
+#: templates/admin/admin-general-configuration.php:56
+msgid "Choose where you want to make the social buttons appear"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:34
+msgid "Colored with slightly rounded edges"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:33
+msgid "Colored with square edges"
+msgstr ""
+
+#: templates/admin/admin-general-configuration.php:51
+msgid "Don't show"
+msgstr ""
+
+#: includes/frontend/class.mwm-rrss.php:198
+msgid "Facebook"
+msgstr ""
+
+#: includes/admin/class.mwm-rrss-admin.php:185
+msgid "General configuration"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://mowomo.com/"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://mowomo.com/sobre-mowomo"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:39
+msgid "In black and white with slightly rounded edges"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:38
+msgid "In black and white with square edges"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:82
+msgid "In the middle"
+msgstr ""
+
+#: templates/admin/admin-general-configuration.php:62
+msgid "Insert the user without @. E.j: mowomocom"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Light and simple plugin for allowing the readers of your blog to share your "
+"entries on their social networks. If you only need to offer the possibility "
+"to your readers of sharing your blog entries... Why getting complicated?"
+msgstr ""
+
+#: includes/frontend/class.mwm-rrss.php:204
+#: includes/frontend/rrss-resources.php:53
+msgid "Linkedin"
+msgstr ""
+
+#. Author of the plugin
+msgid "mowomo"
+msgstr ""
+
+#. Name of the plugin
+#: includes/admin/class.mwm-rrss-admin.php:167
+msgid "mowomo Redes Sociales"
+msgstr ""
+
+#: includes/admin/class.mwm-rrss-admin.php:182
+msgid "mowomo Redes Sociales - mowomo"
+msgstr ""
+
+#: includes/admin/class.mwm-rrss-admin.php:208
+msgid "mowomo team"
+msgstr ""
+
+#: includes/admin/class.mwm-rrss-admin.php:154
+msgid "No se ha rellenado el perfil del usuario de Twitter"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:81
+msgid "On the left"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:83
+msgid "On the right"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:42
+msgid "Only black and white icon with rounded edges"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:41
+msgid "Only black and white icon with slightly rounded edges"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:40
+msgid "Only black and white icon with square borders"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:37
+msgid "Only colored icon with rounded edges"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:36
+msgid "Only colored icon with slightly rounded edges"
+msgstr ""
+
+#: templates/admin/admin-advanced-configuration.php:35
+msgid "Only colored icon with square borders"
+msgstr ""
+
+#: includes/frontend/class.mwm-rrss.php:201
+#: includes/frontend/rrss-resources.php:49
+msgid "Pinterest"
+msgstr ""
+
+#: templates/admin/admin-general-configuration.php:44
+#: templates/admin/admin-general-configuration.php:48
+msgid "Position of buttons"
+msgstr ""
+
+#: includes/admin/class.mwm-rrss-admin.php:154
+msgid "Rellenar perfil de Twitter"
+msgstr ""
+
+#: templates/admin/admin-general-configuration.php:82
+msgid "Shortcode for you to use wherever you want"
+msgstr ""
+
+#: includes/admin/class.mwm-rrss-admin.php:208
+msgid "Thanks for using mowomo Redes Sociales, plugin made by "
+msgstr ""
+
+#: includes/frontend/class.mwm-rrss.php:195
+#: includes/frontend/rrss-resources.php:41
+msgid "Twitter"
+msgstr ""
+
+#: templates/admin/admin-general-configuration.php:60
+msgid "Twitter' user"
+msgstr ""
+
+#: includes/frontend/class.mwm-rrss.php:207
+#: includes/frontend/rrss-resources.php:57
+msgid "WhatsApp"
+msgstr ""
+
+#: templates/admin/admin-general-configuration.php:67
+msgid "Which buttons do you want to show?"
+msgstr ""

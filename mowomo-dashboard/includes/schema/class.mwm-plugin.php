@@ -77,6 +77,17 @@ if (!class_exists('mwm_plugin')) {
         /**
          * Variable
          * 
+         * Plugin pro version
+         *
+         * @since 1.0.0
+         * 
+         * @return bool
+         */
+        protected $is_pro = false;
+
+        /**
+         * Variable
+         * 
          * Plugin pro license
          *
          * @since 1.0.0
@@ -116,16 +127,16 @@ if (!class_exists('mwm_plugin')) {
          * 
          * @return \mwm_plugin
          */
-        public function __construct($slug, $name, $version, $update_url, $pro_license, $update_message)
+        public function __construct($slug, $name, $version, $update_url, $is_pro, $pro_license, $update_message)
         {
             // Initialization of all information
             if (is_string($slug)) $this->slug = $slug;
             if (is_string($name)) $this->name = $name;
             if (is_string($version)) $this->version = $version;
             if (is_string($update_url)) $this->update_url = $update_url;
+            if (is_bool($is_pro)) $this->is_pro = $is_pro;
             if (is_string($pro_license)) $this->pro_license = $pro_license;
             if (is_string($update_message)) $this->update_message = $update_message;
-            $this->notifications = array();
         }
 
         /**

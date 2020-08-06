@@ -9,7 +9,7 @@
 /**
  * Detects if the plugin has been entered directly.
  *
- * @since 1.3.0
+ * @since 1.0.0
  */
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -19,6 +19,7 @@ if (!defined('ABSPATH')) {
 $admin_title = $admin_config['title'];
 $page_slug = $admin_config['page_slug'];
 $admin_tabs = $admin_config['tabs'];
+$plugin_slug = $admin_config['plugin_slug'];
 
 // MAKE THE MAGIC!
 
@@ -39,13 +40,13 @@ $admin_tabs = $admin_config['tabs'];
     <!-- Dinamic Admin Form -->
     <form id="mwm-admin-form" mwm-current-tab="<?php echo $active_tab; ?>" mwm-page-slug="<?php echo $page_slug; ?>" action="options.php" method="post">
         <?php
-            settings_fields( MWM_FRA_SLUG.'-options' );
-            @do_settings_fields( MWM_FRA_SLUG ,MWM_FRA_SLUG.'-options' );
+            settings_fields( $plugin_slug.'-options' );
+            @do_settings_fields( $plugin_slug ,$plugin_slug.'-options' );
         ?>
         <?php foreach ($admin_tabs as $tab_title => $tab_slug) : ?>
             <div id="tab-<?php echo $tab_slug[1]; ?>" class="mwm-tab <?php echo !$first_tab ? 'hidden' : ''; ?>">
                 <?php
-                    print mwm_dashboard_template($tab_slug[0], $tab_slug[1]);
+                    print mwm_template($tab_slug[0], $tab_slug[1]);
                 ?>
             </div>
         <?php endforeach; ?>

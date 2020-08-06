@@ -20,24 +20,48 @@ $atts = $mwm_rrss_atts;
 ?>
 
 <!-- mowomo-redes-sociales-icons-bar -->
-<div class="mwm_rrss_contenedor">
-    <?php if ($atts['twitter'] == "on") : ?>
-        <a class="mwm_rrss mwm_twitter" mwm-rrss-url="<?php echo 'https://twitter.com/intent/tweet?text='.get_the_title().' '.get_permalink().' vía @'.get_option(MWM_RRSS_SLUG.'-twitter'); ?>"><i class="icon-rrss-twitter"></i> <?php echo esc_html( __( "Twitter", MWM_RRSS_SLUG ) ); ?> </a>
-    <?php endif; ?>
+<?php
 
-    <?php if ($atts['facebook'] == "on") : ?>
-        <a class="mwm_rrss mwm_facebook" mwm-rrss-url="<?php echo 'https://www.facebook.com/sharer/sharer.php?u='. get_permalink(); ?>"><i class="icon-rrss-facebook"></i> <?php echo esc_html( __( "Facebook", "mwm-redes-sociales" ) ); ?> </a>
-    <?php endif; ?>
+if (!($appearance = get_option(MWM_RRSS_SLUG.'-appearance'))) {
+    $appearance = '1';
+}
+if (!($alignment = get_option(MWM_RRSS_SLUG.'-alignment'))) {
+    $alignment = '1';
+}
 
-    <?php if ($atts['pinterest'] == "on") : ?>
-        <a class="mwm_rrss mwm_pinterest" mwm-rrss-url="<?php echo 'http://pinterest.com/pin/create/button/?url='. get_permalink() .'&media='.get_the_post_thumbnail_url().'&description='.get_the_title(); ?>"><i class="icon-rrss-pinterest"></i> <?php echo esc_html( __( "Pinterest", MWM_RRSS_SLUG ) ); ?> </a>
-    <?php endif; ?>
+$actives = array();
+if (array_key_exists('twitter', $atts)) {
+    if (strcmp($atts['twitter'], 'on') == 0) {
+        array_push($actives, 'twitter');
+    }
+}
+if (array_key_exists('facebook', $atts)) {
+    if (strcmp($atts['facebook'], 'on') == 0) {
+        array_push($actives, 'facebook');
+    }
+}
+if (array_key_exists('pinterest', $atts)) {
+    if (strcmp($atts['pinterest'], 'on') == 0) {
+        array_push($actives, 'pinterest');
+    }
+}
+if (array_key_exists('linkedin', $atts)) {
+    if (strcmp($atts['linkedin'], 'on') == 0) {
+        array_push($actives, 'linkedin');
+    }
+}
+if (array_key_exists('whatsapp', $atts)) {
+    if (strcmp($atts['whatsapp'], 'on') == 0) {
+        array_push($actives, 'whatsapp');
+    }
+}
 
-    <?php if ($atts['linkedin'] == "on") : ?>
-        <a class="mwm_rrss mwm_linkedin" mwm-rrss-url="<?php echo 'https://www.linkedin.com/shareArticle?mini=true&url=' . get_permalink() . '&title=' . get_the_title() . '&source=' . get_the_post_thumbnail_url(); ?>"><i class="icon-rrss-linkedin"></i> <?php echo esc_html( __( "Linkedin", MWM_RRSS_SLUG ) ); ?> </a>
-    <?php endif; ?>
+$args = array(
+    'actives' => $actives,
+    'appearance' => $appearance,
+    'alignment' => $alignment
+);
 
-    <?php if ($atts['whatsapp'] == "on") : ?>
-        <a class="mwm_rrss mwm_whatsapp" href="<?php echo 'whatsapp://send?text='. get_the_title() .' – '.get_permalink(); ?>" data-action="share/whatsapp/share"><i class="icon-rrss-whatsapp"></i> <?php echo esc_html( __( "WhatsApp", MWM_RRSS_SLUG ) ); ?> </a>
-    <?php endif; ?>
-</div>
+mwm_show_rrss_buttons($args);
+
+?>

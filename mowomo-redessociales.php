@@ -1,17 +1,17 @@
 <?php
 /**
- * Plugin Name: mowomo Redes Sociales
- * Plugin URI: https://mowomo.com/                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+ * Plugin Name: mowomo Social Share
+ * Plugin URI: https://mowomo.com
  * Description: Light and simple plugin for allowing the readers of your blog to share your entries on their social networks. If you only need to offer the possibility to your readers of sharing your blog entries... Why getting complicated?
  * Author: mowomo
  * Author URI: https://mowomo.com/sobre-mowomo
  * Text Domain: mowomo-redes-sociales
  * Domain Path: /languages/
- * Version: 1.3.1
+ * Version: 2.0.2
  * License: GPLv2 or later.
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * WC requires at least: 4.6
- * WC tested up to: 5.2.2
+ * WC tested up to: 5.4.2
  */
 
 /**
@@ -31,13 +31,16 @@ if (!defined('ABSPATH')) {
 if (defined('MWM_RRSS_VERSION')) {
     return;
 } else {
-    define('MWM_RRSS_VERSION', '1.3.1');
+    define('MWM_RRSS_VERSION', '2.0.2');
 }
 if (!defined('MWM_RRSS_SLUG')) {
     define('MWM_RRSS_SLUG', 'mowomo-redes-sociales');
 }
+if (!defined('MWM_RRSS_NAME')) {
+    define('MWM_RRSS_NAME', 'Social Share');
+}
 if (!defined('MWM_RRSS_PRO')) {
-    define('MWM_RRSS_PRO', false);
+    define('MWM_RRSS_PRO', FALSE);
 }
 if (!defined('MWM_RRSS_FILE')) {
     define('MWM_RRSS_FILE', __FILE__);
@@ -49,7 +52,10 @@ if (!defined('MWM_RRSS_DIR')) {
     define('MWM_RRSS_DIR', plugin_dir_path(MWM_RRSS_FILE));
 }
 if (!defined('MWM_RRSS_INIT')) {
-    define('MWM_RRSS_INIT', dirname(plugin_basename(MWM_RRSS_FILE)));
+    define('MWM_RRSS_INIT', basename( dirname( __FILE__ ) ));
+}
+if (!defined('MWM_RRSS_LANG')) {
+    define('MWM_RRSS_LANG', MWM_RRSS_INIT . '/languages/' );
 }
 if (!defined('MWM_RRSS_ASS')) {
     define('MWM_RRSS_ASS', MWM_RRSS_URL.'assets/');
@@ -92,7 +98,7 @@ if (!function_exists('mwm_rrss_constructor')) {
     function mwm_rrss_constructor()
     {
         // Load textdomain
-        load_plugin_textdomain(MWM_RRSS_SLUG, FALSE, MWM_RRSS_INIT.'/languages/');
+        load_plugin_textdomain( MWM_RRSS_SLUG, FALSE, MWM_RRSS_LANG );
 
         // Load includes
         require_once MWM_RRSS_INC.'functions.mwm-rrss.php';

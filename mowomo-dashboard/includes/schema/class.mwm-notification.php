@@ -78,6 +78,10 @@ if (!class_exists('mwm_notification')) {
          * Variable
          * 
          * Notification type
+         * - 0: success
+         * - 1: info
+         * - 2: warning
+         * - 3: danger
          *
          * @since 1.0.0
          * 
@@ -89,6 +93,9 @@ if (!class_exists('mwm_notification')) {
          * Variable
          * 
          * Notification priority
+         * - 0: Low priority
+         * - 0...10: Middle priority
+         * - 10: High priority
          *
          * @since 1.0.0
          * 
@@ -130,7 +137,7 @@ if (!class_exists('mwm_notification')) {
         public function __construct($slug, $name, $message, $url, $type, $priority, $position, $removable)
         {
             // Initialization of all information
-            if (is_string($slug) && is_string($name)) $this->code = $slug.'__'.$name;
+            if (is_string($slug) && is_string($name)) $this->code = $slug.'__'.slugify($name);
             if (is_string($name)) $this->name = $name;
             if (is_string($message)) $this->message = $message;
             if (is_string($url)) $this->url = $url;
@@ -139,13 +146,10 @@ if (!class_exists('mwm_notification')) {
             if (is_string($position)) $this->position = $position;
             if (is_bool($removable)) $this->removable = $removable;
 
-            if ($slug !== MWM_FRA_SLUG) {
-                $plugins = mwm_dashboard()->get_plugins();
-                foreach ($plugins as $key => $plugin) {
-                    if ($plugin->get_info('slug') == $slug) {
-                        $plugin->add_notification($this);
-                        break;
-                    }
+            if ($slug != MWM_FRA_SLUG) {
+                $plugin = mwm_dashboard()->get_plugins($slug);
+                if ($plugin) {
+                    $plugin->add_notification($this);
                 }
             }
         }

@@ -41,29 +41,30 @@ if (in_array('whatsapp', $rrss)) {
 $shortcode .= "]";
 
 // Structure
-mwm_title('Position of buttons');
+mwm_title(__('Position of buttons', 'mowomo-redes-sociales'));
 mwm_table();
     mwm_select(
         MWM_RRSS_SLUG.'-posicion',
-        'Position of buttons',
+        __('Position of buttons','mowomo-redes-sociales'),
         get_option(MWM_RRSS_SLUG.'-posicion'),
         array(
-            '0' => 'Don\'t show',
-            '1' => 'Before the post',
-            '2' => 'After the post',
-            '3' => 'Before and after the post'
+            '0' => __('Don\'t show', 'mowomo-redes-sociales'),
+            '1' => __('Before the post', 'mowomo-redes-sociales'),
+            '2' => __('After the post', 'mowomo-redes-sociales'),
+            '3' => __('Before and after the post', 'mowomo-redes-sociales')
         ),
-        'Choose where you want to make the social buttons appear'
+        __('Choose where you want to make the social buttons appear', 'mowomo-redes-sociales')
     );
     mwm_input_text(
         MWM_RRSS_SLUG.'-twitter',
-        'Usuario de Twitter',
+        __('Twitter user', 'mowomo-redes-sociales'),
         get_option(MWM_RRSS_SLUG.'-twitter'),
-        'Introducir el usuario sin @. E.j: mowomocom'
+        __('Insert the user without @. E.j: mowomocom', 'mowomo-redes-sociales')
     );
-mwm_endtable(); 
+mwm_endtable();
 
-mwm_title("Which buttons do you want to show?"); 
+
+mwm_title(__("Which buttons do you want to show?",'mowomo-redes-sociales')); 
 mwm_table(); 
     mwm_toggles(
         MWM_RRSS_SLUG.'-actives[]',
@@ -78,7 +79,7 @@ mwm_table();
     );
     mwm_input_text(
         'mwm_rrss_shortcode',
-        'Shortcode para que lo uses donde quieras',
+        __('Shortcode for you to use wherever you want', 'mowomo-redes-sociales'),
         $shortcode,
         null,
         false,

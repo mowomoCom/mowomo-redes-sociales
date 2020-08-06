@@ -9,7 +9,7 @@
 /**
  * Detects if the plugin has been entered directly.
  *
- * @since 1.3.0
+ * @since 1.0.0
  */
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -33,18 +33,18 @@ $plugin_slug = $admin_config['plugin_slug'];
     <!-- Nav Tab Wrapper -->
     <h2 class="nav-tab-wrapper">
         <?php foreach ($admin_tabs as $tab_title => $tab_slug) : ?>
-            <a href="javascript:void(0);" mwm-tab="<?php echo $tab_slug[1] ?>" class="nav-tab <?php echo $active_tab == $tab_slug[1] ? 'nav-tab-active' : ''; ?>"><?php echo $tab_title; ?></a>
+            <a href="javascript:void(0);" mwm-tab="<?php echo $tab_slug[1] ?>" class="nav-tab"><?php echo $tab_title; ?></a>
         <?php endforeach; ?>
     </h2>
 
     <!-- Dinamic Admin Form -->
-    <form id="mwm-admin-form" mwm-current-tab="<?php echo $active_tab; ?>" mwm-page-slug="<?php echo $page_slug; ?>" action="options.php" method="post">
+    <form id="mwm-admin-form" mwm-current-tab="" mwm-page-slug="<?php echo $page_slug; ?>" action="options.php" method="post">
         <?php
             settings_fields( $plugin_slug.'-options' );
             @do_settings_fields( $plugin_slug ,$plugin_slug.'-options' );
         ?>
         <?php foreach ($admin_tabs as $tab_title => $tab_slug) : ?>
-            <div id="tab-<?php echo $tab_slug[1]; ?>" class="mwm-tab <?php echo !$first_tab ? 'hidden' : ''; ?>">
+            <div id="tab-<?php echo $tab_slug[1]; ?>" class="mwm-tab <?php echo !isset( $first_tab ) ? 'hidden' : ''; ?>">
                 <?php
                     print mwm_template($tab_slug[0], $tab_slug[1]);
                 ?>

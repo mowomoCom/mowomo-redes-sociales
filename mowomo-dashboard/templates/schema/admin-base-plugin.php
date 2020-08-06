@@ -56,34 +56,24 @@ $plugin_slug = $admin_config['plugin_slug'];
             <p><?php @submit_button(); ?></p>
         </form>
     </div>
+    <?php 
+if(strpos(get_locale(),'es')!== false){
+
+    $posts = mwm_endpoint_get_sidebar_content('ES');
+} else {
+
+    $posts = mwm_endpoint_get_sidebar_content('EN');
+}
+
+    ?>
     <div class="mwm-panel-sidebar">
-        <div class="mwm-panel-sidebar__block">
-            <a href="#">
-                <figure class="mwm-panel-sidebar__img">
-                    <img src="https://i.picsum.photos/id/1028/500/500.jpg?hmac=LRriXwDJ1klyQuh9K4cQrLL6BnMHHseEdx4hECVOkus" alt="">
-                </figure>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </a>
-        </div>
-        <div class="mwm-panel-sidebar__block">
-            <a href="#">
-                <figure class="mwm-panel-sidebar__img">
-                    <img src="https://i.picsum.photos/id/1028/500/500.jpg?hmac=LRriXwDJ1klyQuh9K4cQrLL6BnMHHseEdx4hECVOkus" alt="">
-                </figure>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </a>
-        </div>
-        <div class="mwm-panel-sidebar__block">
-            <a href="#">
-                <figure class="mwm-panel-sidebar__img">
-                    <img src="https://i.picsum.photos/id/1028/500/500.jpg?hmac=LRriXwDJ1klyQuh9K4cQrLL6BnMHHseEdx4hECVOkus" alt="">
-                </figure>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </a>
-        </div>
+        <?php foreach ($posts as $post) : ?>
+            <div class="mwm-panel-sidebar__block">
+                <a href="#">
+                <?php echo $post->post_content;?>
+                </a>
+            </div>
+        <?php endforeach; ?>
     </div>
 </div>
 

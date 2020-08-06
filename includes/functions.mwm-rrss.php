@@ -17,6 +17,7 @@ if (!defined('ABSPATH')) {
 
 // Include plugin's functionalities
 require_once MWM_RRSS_INC.'admin/class.mwm-rrss-admin.php';
+require_once MWM_RRSS_INC.'admin/admin.functions.php';
 require_once MWM_RRSS_INC.'frontend/class.mwm-rrss-shortcodes.php';
 require_once MWM_RRSS_INC.'frontend/class.mwm-rrss.php';
 require_once MWM_RRSS_INC.'frontend/rrss-resources.php';

@@ -69,9 +69,7 @@ if(strpos(get_locale(),'es')!== false){
     <div class="mwm-panel-sidebar">
         <?php foreach ($posts as $post) : ?>
             <div class="mwm-panel-sidebar__block">
-                <a href="#">
                 <?php echo $post->post_content;?>
-                </a>
             </div>
         <?php endforeach; ?>
     </div>

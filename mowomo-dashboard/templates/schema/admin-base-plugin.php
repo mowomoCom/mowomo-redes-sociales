@@ -27,32 +27,64 @@ $plugin_slug = $admin_config['plugin_slug'];
 
 <!-- Admin Page -->
 <div id="mwm-wrap" class="wrap">
-    <!-- Page Title -->
-    <h2><?php echo $admin_title; ?></h2>
+    <div class="mwm-panel-principal">
 
-    <!-- Nav Tab Wrapper -->
-    <h2 class="nav-tab-wrapper">
-        <?php foreach ($admin_tabs as $tab_title => $tab_slug) : ?>
-            <a href="javascript:void(0);" mwm-tab="<?php echo $tab_slug[1] ?>" class="nav-tab"><?php echo $tab_title; ?></a>
-        <?php endforeach; ?>
-    </h2>
+        <!-- Page Title -->
+        <h2><?php echo $admin_title; ?></h2>
 
-    <!-- Dinamic Admin Form -->
-    <form id="mwm-admin-form" mwm-current-tab="" mwm-page-slug="<?php echo $page_slug; ?>" action="options.php" method="post">
-        <?php
-            settings_fields( $plugin_slug.'-options' );
-            @do_settings_fields( $plugin_slug ,$plugin_slug.'-options' );
-        ?>
-        <?php foreach ($admin_tabs as $tab_title => $tab_slug) : ?>
-            <div id="tab-<?php echo $tab_slug[1]; ?>" class="mwm-tab <?php echo !isset( $first_tab ) ? 'hidden' : ''; ?>">
-                <?php
-                    print mwm_template($tab_slug[0], $tab_slug[1]);
-                ?>
-            </div>
-        <?php endforeach; ?>
+        <!-- Nav Tab Wrapper -->
+        <h2 class="nav-tab-wrapper">
+            <?php foreach ($admin_tabs as $tab_title => $tab_slug) : ?>
+                <a href="javascript:void(0);" mwm-tab="<?php echo $tab_slug[1] ?>" class="nav-tab"><?php echo $tab_title; ?></a>
+            <?php endforeach; ?>
+        </h2>
 
-        <p><?php @submit_button(); ?></p>
-    </form>
+        <!-- Dinamic Admin Form -->
+        <form id="mwm-admin-form" mwm-current-tab="" mwm-page-slug="<?php echo $page_slug; ?>" action="options.php" method="post">
+            <?php
+                settings_fields( $plugin_slug.'-options' );
+                @do_settings_fields( $plugin_slug ,$plugin_slug.'-options' );
+            ?>
+            <?php foreach ($admin_tabs as $tab_title => $tab_slug) : ?>
+                <div id="tab-<?php echo $tab_slug[1]; ?>" class="mwm-tab <?php echo !isset( $first_tab ) ? 'hidden' : ''; ?>">
+                    <?php
+                        print mwm_template($tab_slug[0], $tab_slug[1]);
+                    ?>
+                </div>
+            <?php endforeach; ?>
 
-    <?php settings_errors(); ?>
+            <p><?php @submit_button(); ?></p>
+        </form>
+    </div>
+    <div class="mwm-panel-sidebar">
+        <div class="mwm-panel-sidebar__block">
+            <a href="#">
+                <figure class="mwm-panel-sidebar__img">
+                    <img src="https://i.picsum.photos/id/1028/500/500.jpg?hmac=LRriXwDJ1klyQuh9K4cQrLL6BnMHHseEdx4hECVOkus" alt="">
+                </figure>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+        </div>
+        <div class="mwm-panel-sidebar__block">
+            <a href="#">
+                <figure class="mwm-panel-sidebar__img">
+                    <img src="https://i.picsum.photos/id/1028/500/500.jpg?hmac=LRriXwDJ1klyQuh9K4cQrLL6BnMHHseEdx4hECVOkus" alt="">
+                </figure>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+        </div>
+        <div class="mwm-panel-sidebar__block">
+            <a href="#">
+                <figure class="mwm-panel-sidebar__img">
+                    <img src="https://i.picsum.photos/id/1028/500/500.jpg?hmac=LRriXwDJ1klyQuh9K4cQrLL6BnMHHseEdx4hECVOkus" alt="">
+                </figure>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </a>
+        </div>
+    </div>
 </div>
+
+<?php settings_errors(); ?>

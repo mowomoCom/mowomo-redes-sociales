@@ -26,6 +26,8 @@ $admin_tabs = $admin_config['tabs'];
 
 <!-- Admin Page -->
 <div id="mwm-wrap" class="wrap">
+
+
     <!-- Page Title -->
     <h2><?php echo $admin_title; ?></h2>
 
